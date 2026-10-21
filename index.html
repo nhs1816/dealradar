@@ -34,9 +34,8 @@ body{margin:0;-webkit-tap-highlight-color:transparent}
 :root {
   --bg: #eef2f0; --surface: #ffffff; --ink: #14201c; --muted: #5b6a64; --line: #d5ddd9;
   --accent: #0f6e56; --accent-soft: #dcefe8;
-  --new: #0f6e56; --new-bg: #dcefe8;
-  --prog: #2457c5; --prog-bg: #e2eafb;
-  --chg: #a85a12; --chg-bg: #f8ead9;
+  /* 딜 단계 5색: 검토(호박) → IM·실사 → 입찰·협상 → 계약·승인 → 인수 완료(남색) */
+  --s1: #b0601a; --s2: #8a7300; --s3: #3d7f3a; --s4: #0f6e56; --s5: #2a55b0;
   --track: #dfe6e2;
   --f-display: "Noto Serif KR", "Apple SD Gothic Neo", serif;
   --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
@@ -45,18 +44,18 @@ body{margin:0;-webkit-tap-highlight-color:transparent}
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #0f1614; --surface: #17211e; --ink: #e4ece8; --muted: #95a59f; --line: #2a3733;
   --accent: #4cc39d; --accent-soft: #173a30;
-  --new: #4cc39d; --new-bg: #173a30; --prog: #87a8f2; --prog-bg: #1d2a47; --chg: #e5a35f; --chg-bg: #3a2a18;
+  --s1: #e59a55; --s2: #d2b640; --s3: #7cc06f; --s4: #4cc39d; --s5: #87a8f2;
   --track: #2a3733; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #0f1614; --surface: #17211e; --ink: #e4ece8; --muted: #95a59f; --line: #2a3733;
   --accent: #4cc39d; --accent-soft: #173a30;
-  --new: #4cc39d; --new-bg: #173a30; --prog: #87a8f2; --prog-bg: #1d2a47; --chg: #e5a35f; --chg-bg: #3a2a18;
+  --s1: #e59a55; --s2: #d2b640; --s3: #7cc06f; --s4: #4cc39d; --s5: #87a8f2;
   --track: #2a3733; color-scheme: dark }
 
 body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--f-body); }
 .wrap { max-width: 1040px; margin: 0 auto; padding-block: 20px 56px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-  display: grid; gap: 22px; }
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -83,7 +82,8 @@ h1 { font: 700 clamp(26px, 5vw, 38px)/1.15 var(--f-display); margin: 8px 0 0; te
   background: var(--bg); padding-block: 8px; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); padding: 3px; }
-.seg button { border: 0; background: none; padding: 5px 14px; border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--muted); }
+.seg { max-width: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.seg button { flex: none; white-space: nowrap; border: 0; background: none; padding: 5px 14px; border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--muted); }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 
 /* 섹션 */
@@ -95,11 +95,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 /* 딜 카드 */
 .deal { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 16px 14px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; align-content: start; }
 .top { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; }
-.pill { font-weight: 600; padding: 2px 9px; border-radius: 999px; }
-.k-신규 { color: var(--new); background: var(--new-bg); }
-.k-진전 { color: var(--prog); background: var(--prog-bg); }
-.k-변동 { color: var(--chg); background: var(--chg-bg); }
+.pill { font-weight: 600; padding: 2px 9px; border-radius: 999px; color: var(--sc); background: color-mix(in srgb, var(--sc) 14%, transparent); }
 .sector { color: var(--muted); }
+.kind { margin-left: auto; color: var(--muted); }
 .deal h3 { margin: 0; font-size: 16.5px; line-height: 1.45; font-weight: 600; text-wrap: balance; }
 .terms { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0; font-size: 13.5px; }
 .terms dt { color: var(--muted); }
@@ -107,11 +105,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .terms dd.val { font-family: var(--f-mono); font-size: 13px; }
 
 /* 단계 사다리 */
-.ladder { display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px; }
+.ladder { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; }
 .ladder i { height: 6px; border-radius: 2px; background: var(--track); }
-.ladder i.on { background: var(--kc); }
-.ladder-l { display: flex; justify-content: space-between; font: 500 11px var(--f-mono); color: var(--muted); margin-top: -4px; }
-.ladder-l b { color: var(--kc); font-family: var(--f-body); font-weight: 600; font-size: 12px; }
+.ladder i.on { background: var(--sc); }
+.ladder-l { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; font-size: 11px; color: var(--muted); margin-top: -6px; }
+.ladder-l span { text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ladder-l span.cur { color: var(--sc); font-weight: 600; }
 .note { margin: 0; font-size: 13.5px; color: var(--ink); }
 .prev { margin: 0; font-size: 12.5px; color: var(--muted); }
 .prev::before { content: "이전 흐름 "; font-weight: 600; }
@@ -154,9 +153,7 @@ footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line)
     <div class="seg" role="group" aria-label="지역">
       <button data-r="전체" aria-pressed="true">전체</button><button data-r="국내" aria-pressed="false">국내</button><button data-r="해외" aria-pressed="false">해외</button>
     </div>
-    <div class="seg" role="group" aria-label="종류">
-      <button data-k="전체" aria-pressed="true">전체</button><button data-k="신규" aria-pressed="false">신규</button><button data-k="진전" aria-pressed="false">진전</button><button data-k="변동" aria-pressed="false">변동</button>
-    </div>
+    <div class="seg" role="group" aria-label="딜 단계" id="stageSeg"></div>
   </div>
 
   <main id="feed"></main>
@@ -166,18 +163,23 @@ footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line)
 
 <script src="days/index.js"></script>
 <script>
-const STEPS = [
-  ["explore", "검토"], ["adviser", "주관사"], ["marketing", "티저·IM"], ["bid", "입찰"],
-  ["pref", "우협"], ["signed", "계약"], ["approval", "승인"], ["closed", "종결"]];
-const STAGE_TO_STEP = { explore: 0, adviser: 1, marketing: 2, prelim: 3, short: 3, binding: 3, pref: 4, signed: 5, approval: 6, closed: 7, dropped: -1 };
-const STAGE_LABEL = { explore: "매각 검토·추진", adviser: "주관사 선정", marketing: "티저·IM 배포", prelim: "예비입찰", short: "숏리스트·실사",
-  binding: "본입찰", pref: "우선협상", signed: "계약 체결", approval: "당국 승인", closed: "거래종결", dropped: "무산·철회" };
-const KIND_COLOR = { "신규": "var(--new)", "진전": "var(--prog)", "변동": "var(--chg)" };
+// 딜 단계 5개. 세부 단계(stage)는 데이터에 그대로 두고 화면에서만 묶어요.
+const GROUPS = [
+  { key: "g1", name: "매각 검토", short: "검토", stages: ["explore", "adviser"] },
+  { key: "g2", name: "IM·실사", short: "IM·실사", stages: ["marketing", "short"] },
+  { key: "g3", name: "입찰·협상", short: "입찰", stages: ["prelim", "binding", "pref"] },
+  { key: "g4", name: "계약·승인", short: "계약", stages: ["signed", "approval"] },
+  { key: "g5", name: "인수 완료", short: "완료", stages: ["closed"] }];
+const GROUP_OF = {};
+GROUPS.forEach((g, i) => g.stages.forEach(s => GROUP_OF[s] = i));
+const STAGE_LABEL = { explore: "매물·매각 검토", adviser: "주관사 선정", marketing: "티저·IM 배포", prelim: "예비입찰", short: "숏리스트·실사",
+  binding: "본입찰", pref: "우선협상", signed: "계약 체결", approval: "당국·주총 승인", closed: "거래종결", dropped: "무산·철회" };
+const KIND_TEXT = { "신규": "첫 보도", "진전": "단계 진전", "변동": "변동 있음" };
 const WD = "일월화수목금토";
 
 const index = (window.DAY_INDEX || []).slice().sort();
-const state = { day: index[index.length - 1], r: "전체", k: "전체" };
-try { const s = JSON.parse(localStorage.getItem("dealradar:f") || "{}"); if (s.r) state.r = s.r; if (s.k) state.k = s.k; } catch (e) {}
+const state = { day: index[index.length - 1], r: "전체", s: "전체" };
+try { const s = JSON.parse(localStorage.getItem("dealradar:f2") || "{}"); if (s.r) state.r = s.r; if (s.s) state.s = s.s; } catch (e) {}
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -193,16 +195,18 @@ function loadDay(day) {
 }
 
 function card(d) {
-  const step = STAGE_TO_STEP[d.stage];
-  const bars = STEPS.map((_, i) => `<i class="${i <= step ? "on" : ""}"></i>`).join("");
+  const gi = GROUP_OF[d.stage] ?? -1, g = GROUPS[gi];
+  const color = gi >= 0 ? `var(--s${gi + 1})` : "var(--muted)";
+  const bars = GROUPS.map((_, i) => `<i class="${i <= gi ? "on" : ""}"></i>`).join("");
+  const marks = GROUPS.map((x, i) => `<span${i === gi ? ' class="cur"' : ""}>${x.short}</span>`).join("");
   const rows = [["대상", d.target], ["매도", d.seller], ["인수", d.buyer], ["금액", d.value]]
     .filter(r => r[1]).map(([k, v]) => `<dt>${k}</dt><dd${k === "금액" ? ' class="val"' : ""}>${esc(v)}</dd>`).join("");
   const links = d.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener"><span class="s">${esc(l.source)}</span><span class="t">${esc(l.title)}</span></a></li>`).join("");
-  return `<article class="deal" style="--kc:${KIND_COLOR[d.kind]}">
-    <div class="top"><span class="pill k-${d.kind}">${d.kind}</span><span class="sector">${esc(d.sector)}</span></div>
+  return `<article class="deal" style="--sc:${color}">
+    <div class="top"><span class="pill">${STAGE_LABEL[d.stage]}</span><span class="sector">${esc(d.sector)}</span><span class="kind">${KIND_TEXT[d.kind] || ""}</span></div>
     <h3>${esc(d.title)}</h3>
-    <div><div class="ladder" aria-hidden="true">${bars}</div></div>
-    <div class="ladder-l"><span>검토</span><b>${STAGE_LABEL[d.stage]}</b><span>종결</span></div>
+    <div class="ladder" aria-label="딜 단계: ${g ? g.name : "무산"}">${bars}</div>
+    <div class="ladder-l" aria-hidden="true">${marks}</div>
     <dl class="terms">${rows}</dl>
     ${d.note ? `<p class="note">${esc(d.note)}</p>` : ""}
     ${d.prev ? `<p class="prev">${esc(d.prev)}</p>` : ""}
@@ -215,21 +219,20 @@ async function render() {
   $("prevDay").disabled = i <= 0; $("nextDay").disabled = i >= index.length - 1;
   sel.value = state.day;
   document.querySelectorAll("[data-r]").forEach(b => b.setAttribute("aria-pressed", b.dataset.r === state.r));
-  document.querySelectorAll("[data-k]").forEach(b => b.setAttribute("aria-pressed", b.dataset.k === state.k));
+  document.querySelectorAll("[data-s]").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === state.s));
   if (!state.day) { $("feed").innerHTML = '<p class="empty">아직 모은 날짜가 없어요. 매일 아침 전날 기사가 여기에 쌓여요.</p>'; return; }
 
   const data = await loadDay(state.day);
   $("h").textContent = label(state.day) + " 딜";
   $("summary").textContent = data.summary || "";
-  const n = k => data.deals.filter(d => d.kind === k).length;
-  $("tally").innerHTML = [["신규", "var(--new)"], ["진전", "var(--prog)"], ["변동", "var(--chg)"]]
-    .map(([k, c]) => `<span><i class="dot" style="background:${c}"></i>${k} <b>${n(k)}</b></span>`).join("")
+  const n = i => data.deals.filter(d => GROUP_OF[d.stage] === i).length;
+  $("tally").innerHTML = GROUPS.map((g, i) => `<span><i class="dot" style="background:var(--s${i + 1})"></i>${g.name} <b>${n(i)}</b></span>`).join("")
     + `<span>· 후속 기사라 제외 <b>${(data.skipped || []).length}</b></span>`;
 
-  const shown = data.deals.filter(d => (state.r === "전체" || d.region === state.r) && (state.k === "전체" || d.kind === state.k));
-  const order = { "신규": 0, "진전": 1, "변동": 2 };
+  const inStage = d => state.s === "전체" || GROUPS.find(g => g.key === state.s)?.stages.includes(d.stage);
+  const shown = data.deals.filter(d => (state.r === "전체" || d.region === state.r) && inStage(d));
   $("feed").innerHTML = ["국내", "해외"].map(r => {
-    const list = shown.filter(d => d.region === r).sort((a, b) => order[a.kind] - order[b.kind]);
+    const list = shown.filter(d => d.region === r).sort((a, b) => (GROUP_OF[a.stage] ?? 9) - (GROUP_OF[b.stage] ?? 9));
     if (!list.length) return "";
     return `<section class="region"><h2>${r}<small>${list.length}건</small></h2><div class="grid">${list.map(card).join("")}</div></section>`;
   }).join("") || '<p class="empty">이 조건에 맞는 딜이 없어요.</p>';
@@ -241,16 +244,18 @@ async function render() {
     <p>어제 기사가 있었지만, 그 전에 이미 같은 단계로 보도된 딜이에요.</p>
     <ul class="skiplist">${sk.map(([a, b]) => `<li><span>${esc(a)}</span><span>${esc(b)}</span></li>`).join("")}</ul>`;
   const st = data.stats || {};
-  $("foot").textContent = `구글 뉴스에서 ${state.day} 하루 동안 나온 M&A 관련 기사 ${st.raw ?? "-"}건(국내 ${st.ko ?? "-"}, 해외 ${st.en ?? "-"})을 모아 딜 단위로 정리했어요. 단계와 신규 여부는 과거 180일 보도와 비교해 판단해요.`;
+  $("foot").textContent = `구글 뉴스에서 ${state.day} 하루 동안 나온 M&A 관련 기사 ${st.raw ?? "-"}건(국내 ${st.ko ?? "-"}, 해외 ${st.en ?? "-"})을 모아 딜 단위로 정리했어요. 이미 같은 단계로 보도된 딜은 과거 180일 보도와 비교해 빼요.`;
 }
 
 $("daySel").innerHTML = index.slice().reverse().map(d => `<option value="${d}">${d}</option>`).join("");
 $("daySel").onchange = e => { state.day = e.target.value; render(); };
 $("prevDay").onclick = () => { state.day = index[index.indexOf(state.day) - 1]; render(); };
 $("nextDay").onclick = () => { state.day = index[index.indexOf(state.day) + 1]; render(); };
-document.querySelectorAll("[data-r],[data-k]").forEach(b => b.onclick = () => {
-  if (b.dataset.r) state.r = b.dataset.r; else state.k = b.dataset.k;
-  try { localStorage.setItem("dealradar:f", JSON.stringify({ r: state.r, k: state.k })); } catch (e) {}
+$("stageSeg").innerHTML = `<button data-s="전체" aria-pressed="true">전체</button>`
+  + GROUPS.map(g => `<button data-s="${g.key}" aria-pressed="false">${g.name}</button>`).join("");
+document.querySelectorAll("[data-r],[data-s]").forEach(b => b.onclick = () => {
+  if (b.dataset.r) state.r = b.dataset.r; else state.s = b.dataset.s;
+  try { localStorage.setItem("dealradar:f2", JSON.stringify({ r: state.r, s: state.s })); } catch (e) {}
   render();
 });
 render();
