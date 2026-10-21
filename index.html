@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>딜레이더</title>
+<meta name="description" content="전날 나온 국내·해외 M&A 기사를 딜 단위로 모아, 새 딜과 단계가 바뀐 딜만 보여줘요.">
+<meta name="theme-color" content="#eef2f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1614" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="딜레이더">
+<meta property="og:title" content="딜레이더 · 어제의 M&A">
+<meta property="og:description" content="매물, IM 배포, 우협, 계약, 딜 클로징까지. 새 딜과 진전된 딜만 매일 아침 정리해요.">
+<meta property="og:url" content="https://nhs1816.github.io/dealradar/">
+<meta property="og:image" content="https://nhs1816.github.io/dealradar/icons/icon-512.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="딜레이더">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+body{margin:0;-webkit-tap-highlight-color:transparent}
+.wrap{padding-top:calc(20px + env(safe-area-inset-top,0px))!important;padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important}
+</style>
+</head>
+<body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@700;900&display=swap">
+<style>
+/* 레이아웃: 날짜 마스트헤드 → 요약·필터 → 국내/해외 딜 카드(넓으면 2열) → 제외 목록. 카드마다 딜 단계 사다리. */
+:root {
+  --bg: #eef2f0; --surface: #ffffff; --ink: #14201c; --muted: #5b6a64; --line: #d5ddd9;
+  --accent: #0f6e56; --accent-soft: #dcefe8;
+  --new: #0f6e56; --new-bg: #dcefe8;
+  --prog: #2457c5; --prog-bg: #e2eafb;
+  --chg: #a85a12; --chg-bg: #f8ead9;
+  --track: #dfe6e2;
+  --f-display: "Noto Serif KR", "Apple SD Gothic Neo", serif;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f1614; --surface: #17211e; --ink: #e4ece8; --muted: #95a59f; --line: #2a3733;
+  --accent: #4cc39d; --accent-soft: #173a30;
+  --new: #4cc39d; --new-bg: #173a30; --prog: #87a8f2; --prog-bg: #1d2a47; --chg: #e5a35f; --chg-bg: #3a2a18;
+  --track: #2a3733; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f1614; --surface: #17211e; --ink: #e4ece8; --muted: #95a59f; --line: #2a3733;
+  --accent: #4cc39d; --accent-soft: #173a30;
+  --new: #4cc39d; --new-bg: #173a30; --prog: #87a8f2; --prog-bg: #1d2a47; --chg: #e5a35f; --chg-bg: #3a2a18;
+  --track: #2a3733; color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--f-body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 20px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 22px; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* 마스트헤드 */
+.mast { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 20px;
+  border-bottom: 2px solid var(--ink); padding-bottom: 14px; }
+.brand { font: 900 15px/1 var(--f-display); letter-spacing: .02em; color: var(--accent); }
+.brand span { color: var(--muted); font: 500 12px var(--f-mono); letter-spacing: .08em; margin-left: 8px; }
+h1 { font: 700 clamp(26px, 5vw, 38px)/1.15 var(--f-display); margin: 8px 0 0; text-wrap: balance; }
+.datenav { display: flex; gap: 6px; align-items: center; }
+.datenav button { width: 38px; height: 38px; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; cursor: pointer; font-size: 18px; }
+.datenav button:disabled { opacity: .35; cursor: default; }
+.datenav select { height: 38px; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 0 8px; font: 500 13px var(--f-mono); color: var(--ink); }
+
+.summary { margin: 0; max-width: 68ch; font-size: 16px; }
+.tally { display: flex; flex-wrap: wrap; gap: 8px 14px; font: 500 13px var(--f-body); color: var(--muted); }
+.tally b { font: 500 13px var(--f-mono); color: var(--ink); }
+.tally span { display: inline-flex; gap: 6px; align-items: center; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+/* 필터 */
+.filters { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); padding-block: 8px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); padding: 3px; }
+.seg button { border: 0; background: none; padding: 5px 14px; border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--muted); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+/* 섹션 */
+.region { display: grid; gap: 12px; }
+.region h2 { font: 700 18px var(--f-display); margin: 0; display: flex; align-items: baseline; gap: 10px; }
+.region h2 small { font: 500 12px var(--f-mono); color: var(--muted); }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); }
+
+/* 딜 카드 */
+.deal { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 16px 14px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; align-content: start; }
+.top { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; }
+.pill { font-weight: 600; padding: 2px 9px; border-radius: 999px; }
+.k-신규 { color: var(--new); background: var(--new-bg); }
+.k-진전 { color: var(--prog); background: var(--prog-bg); }
+.k-변동 { color: var(--chg); background: var(--chg-bg); }
+.sector { color: var(--muted); }
+.deal h3 { margin: 0; font-size: 16.5px; line-height: 1.45; font-weight: 600; text-wrap: balance; }
+.terms { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0; font-size: 13.5px; }
+.terms dt { color: var(--muted); }
+.terms dd { margin: 0; min-width: 0; }
+.terms dd.val { font-family: var(--f-mono); font-size: 13px; }
+
+/* 단계 사다리 */
+.ladder { display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px; }
+.ladder i { height: 6px; border-radius: 2px; background: var(--track); }
+.ladder i.on { background: var(--kc); }
+.ladder-l { display: flex; justify-content: space-between; font: 500 11px var(--f-mono); color: var(--muted); margin-top: -4px; }
+.ladder-l b { color: var(--kc); font-family: var(--f-body); font-weight: 600; font-size: 12px; }
+.note { margin: 0; font-size: 13.5px; color: var(--ink); }
+.prev { margin: 0; font-size: 12.5px; color: var(--muted); }
+.prev::before { content: "이전 흐름 "; font-weight: 600; }
+.links { list-style: none; margin: 0; padding: 10px 0 0; border-top: 1px dashed var(--line); display: grid; gap: 4px; font-size: 13px; }
+.links li { min-width: 0; }
+.links a { text-decoration: none; display: flex; gap: 8px; min-width: 0; overflow: hidden; }
+.links a:hover .t { text-decoration: underline; }
+.links .s { flex: none; color: var(--muted); font-size: 12px; min-width: 5.5em; }
+.links .t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* 제외 */
+details.skip { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+details.skip summary { cursor: pointer; font-weight: 600; }
+details.skip p { color: var(--muted); font-size: 13px; margin: 8px 0; }
+.skiplist { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); font-size: 13px; }
+.skiplist li { display: flex; gap: 8px; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 5px 0; }
+.skiplist li span:last-child { color: var(--muted); text-align: right; }
+.empty { color: var(--muted); padding: 24px 0; }
+footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 14px; }
+@media (prefers-reduced-motion: no-preference) { .deal { transition: border-color .15s; } .deal:hover { border-color: var(--muted); } }
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <div class="brand">딜레이더<span>M&amp;A DAILY</span></div>
+      <h1 id="h">—</h1>
+    </div>
+    <nav class="datenav" aria-label="날짜 이동">
+      <button id="prevDay" aria-label="이전 날짜">‹</button>
+      <select id="daySel" aria-label="날짜 선택"></select>
+      <button id="nextDay" aria-label="다음 날짜">›</button>
+    </nav>
+  </header>
+
+  <p class="summary" id="summary"></p>
+  <div class="tally" id="tally"></div>
+
+  <div class="filters">
+    <div class="seg" role="group" aria-label="지역">
+      <button data-r="전체" aria-pressed="true">전체</button><button data-r="국내" aria-pressed="false">국내</button><button data-r="해외" aria-pressed="false">해외</button>
+    </div>
+    <div class="seg" role="group" aria-label="종류">
+      <button data-k="전체" aria-pressed="true">전체</button><button data-k="신규" aria-pressed="false">신규</button><button data-k="진전" aria-pressed="false">진전</button><button data-k="변동" aria-pressed="false">변동</button>
+    </div>
+  </div>
+
+  <main id="feed"></main>
+  <details class="skip" id="skip"></details>
+  <footer id="foot"></footer>
+</div>
+
+<script src="days/index.js"></script>
+<script>
+const STEPS = [
+  ["explore", "검토"], ["adviser", "주관사"], ["marketing", "티저·IM"], ["bid", "입찰"],
+  ["pref", "우협"], ["signed", "계약"], ["approval", "승인"], ["closed", "종결"]];
+const STAGE_TO_STEP = { explore: 0, adviser: 1, marketing: 2, prelim: 3, short: 3, binding: 3, pref: 4, signed: 5, approval: 6, closed: 7, dropped: -1 };
+const STAGE_LABEL = { explore: "매각 검토·추진", adviser: "주관사 선정", marketing: "티저·IM 배포", prelim: "예비입찰", short: "숏리스트·실사",
+  binding: "본입찰", pref: "우선협상", signed: "계약 체결", approval: "당국 승인", closed: "거래종결", dropped: "무산·철회" };
+const KIND_COLOR = { "신규": "var(--new)", "진전": "var(--prog)", "변동": "var(--chg)" };
+const WD = "일월화수목금토";
+
+const index = (window.DAY_INDEX || []).slice().sort();
+const state = { day: index[index.length - 1], r: "전체", k: "전체" };
+try { const s = JSON.parse(localStorage.getItem("dealradar:f") || "{}"); if (s.r) state.r = s.r; if (s.k) state.k = s.k; } catch (e) {}
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const label = d => { const t = new Date(d + "T00:00:00"); return `${t.getMonth() + 1}월 ${t.getDate()}일 ${WD[t.getDay()]}요일`; };
+
+function loadDay(day) {
+  if (window.DAYS && window.DAYS[day]) return Promise.resolve(window.DAYS[day]);
+  return new Promise((ok, fail) => {
+    const s = document.createElement("script");
+    s.src = `days/${day}.js`; s.onload = () => ok(window.DAYS[day]); s.onerror = fail;
+    document.head.appendChild(s);
+  });
+}
+
+function card(d) {
+  const step = STAGE_TO_STEP[d.stage];
+  const bars = STEPS.map((_, i) => `<i class="${i <= step ? "on" : ""}"></i>`).join("");
+  const rows = [["대상", d.target], ["매도", d.seller], ["인수", d.buyer], ["금액", d.value]]
+    .filter(r => r[1]).map(([k, v]) => `<dt>${k}</dt><dd${k === "금액" ? ' class="val"' : ""}>${esc(v)}</dd>`).join("");
+  const links = d.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener"><span class="s">${esc(l.source)}</span><span class="t">${esc(l.title)}</span></a></li>`).join("");
+  return `<article class="deal" style="--kc:${KIND_COLOR[d.kind]}">
+    <div class="top"><span class="pill k-${d.kind}">${d.kind}</span><span class="sector">${esc(d.sector)}</span></div>
+    <h3>${esc(d.title)}</h3>
+    <div><div class="ladder" aria-hidden="true">${bars}</div></div>
+    <div class="ladder-l"><span>검토</span><b>${STAGE_LABEL[d.stage]}</b><span>종결</span></div>
+    <dl class="terms">${rows}</dl>
+    ${d.note ? `<p class="note">${esc(d.note)}</p>` : ""}
+    ${d.prev ? `<p class="prev">${esc(d.prev)}</p>` : ""}
+    <ul class="links">${links}</ul>
+  </article>`;
+}
+
+async function render() {
+  const sel = $("daySel"), i = index.indexOf(state.day);
+  $("prevDay").disabled = i <= 0; $("nextDay").disabled = i >= index.length - 1;
+  sel.value = state.day;
+  document.querySelectorAll("[data-r]").forEach(b => b.setAttribute("aria-pressed", b.dataset.r === state.r));
+  document.querySelectorAll("[data-k]").forEach(b => b.setAttribute("aria-pressed", b.dataset.k === state.k));
+  if (!state.day) { $("feed").innerHTML = '<p class="empty">아직 모은 날짜가 없어요. 매일 아침 전날 기사가 여기에 쌓여요.</p>'; return; }
+
+  const data = await loadDay(state.day);
+  $("h").textContent = label(state.day) + " 딜";
+  $("summary").textContent = data.summary || "";
+  const n = k => data.deals.filter(d => d.kind === k).length;
+  $("tally").innerHTML = [["신규", "var(--new)"], ["진전", "var(--prog)"], ["변동", "var(--chg)"]]
+    .map(([k, c]) => `<span><i class="dot" style="background:${c}"></i>${k} <b>${n(k)}</b></span>`).join("")
+    + `<span>· 후속 기사라 제외 <b>${(data.skipped || []).length}</b></span>`;
+
+  const shown = data.deals.filter(d => (state.r === "전체" || d.region === state.r) && (state.k === "전체" || d.kind === state.k));
+  const order = { "신규": 0, "진전": 1, "변동": 2 };
+  $("feed").innerHTML = ["국내", "해외"].map(r => {
+    const list = shown.filter(d => d.region === r).sort((a, b) => order[a.kind] - order[b.kind]);
+    if (!list.length) return "";
+    return `<section class="region"><h2>${r}<small>${list.length}건</small></h2><div class="grid">${list.map(card).join("")}</div></section>`;
+  }).join("") || '<p class="empty">이 조건에 맞는 딜이 없어요.</p>';
+  $("feed").style.display = "grid"; $("feed").style.gap = "28px";
+
+  const sk = data.skipped || [];
+  $("skip").hidden = !sk.length;
+  $("skip").innerHTML = `<summary>후속 기사라 뺀 딜 ${sk.length}건</summary>
+    <p>어제 기사가 있었지만, 그 전에 이미 같은 단계로 보도된 딜이에요.</p>
+    <ul class="skiplist">${sk.map(([a, b]) => `<li><span>${esc(a)}</span><span>${esc(b)}</span></li>`).join("")}</ul>`;
+  const st = data.stats || {};
+  $("foot").textContent = `구글 뉴스에서 ${state.day} 하루 동안 나온 M&A 관련 기사 ${st.raw ?? "-"}건(국내 ${st.ko ?? "-"}, 해외 ${st.en ?? "-"})을 모아 딜 단위로 정리했어요. 단계와 신규 여부는 과거 180일 보도와 비교해 판단해요.`;
+}
+
+$("daySel").innerHTML = index.slice().reverse().map(d => `<option value="${d}">${d}</option>`).join("");
+$("daySel").onchange = e => { state.day = e.target.value; render(); };
+$("prevDay").onclick = () => { state.day = index[index.indexOf(state.day) - 1]; render(); };
+$("nextDay").onclick = () => { state.day = index[index.indexOf(state.day) + 1]; render(); };
+document.querySelectorAll("[data-r],[data-k]").forEach(b => b.onclick = () => {
+  if (b.dataset.r) state.r = b.dataset.r; else state.k = b.dataset.k;
+  try { localStorage.setItem("dealradar:f", JSON.stringify({ r: state.r, k: state.k })); } catch (e) {}
+  render();
+});
+render();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+</script>
+</body>
+</html>
