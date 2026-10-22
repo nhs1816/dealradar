@@ -139,7 +139,11 @@ details.skip summary { cursor: pointer; font-weight: 600; }
 details.skip p { color: var(--muted); font-size: 13px; margin: 8px 0; }
 .skiplist { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); font-size: 13px; }
 .skiplist li { display: flex; gap: 8px; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 5px 0; }
-.skiplist li span:last-child { color: var(--muted); text-align: right; }
+.skiplist li > span:last-child { color: var(--muted); text-align: right; }
+.skiplist .nm { display: grid; gap: 2px; min-width: 0; }
+.skiplinks { display: flex; flex-wrap: wrap; gap: 0 10px; font-size: 12px; }
+.skiplinks a { color: var(--accent); text-decoration: none; white-space: nowrap; }
+.skiplinks a:hover { text-decoration: underline; }
 .empty { color: var(--muted); padding: 24px 0; }
 footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 14px; }
 @media (prefers-reduced-motion: no-preference) { .deal { transition: border-color .15s; } .deal:hover { border-color: var(--muted); } }
@@ -254,7 +258,8 @@ async function render() {
   $("skip").hidden = !sk.length;
   $("skip").innerHTML = `<summary>후속 기사라 뺀 딜 ${sk.length}건</summary>
     <p>어제 기사가 있었지만, 그 전에 이미 같은 단계로 보도된 딜이에요.</p>
-    <ul class="skiplist">${sk.map(([a, b]) => `<li><span>${esc(a)}</span><span>${esc(b)}</span></li>`).join("")}</ul>`;
+    <ul class="skiplist">${sk.map(([a, b, ls = []]) => `<li><span class="nm"><span>${esc(a)}</span>${ls.length ? `<span class="skiplinks">${ls.map(l =>
+      `<a href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(l.title)}">${esc(l.source)} ↗</a>`).join("")}</span>` : ""}</span><span>${esc(b)}</span></li>`).join("")}</ul>`;
   const st = data.stats || {};
   $("foot").textContent = `구글 뉴스에서 ${state.day} 하루 동안 나온 M&A 관련 기사 ${st.raw ?? "-"}건(국내 ${st.ko ?? "-"}, 해외 ${st.en ?? "-"})을 모아 딜 단위로 정리했어요. 이미 같은 단계로 보도된 딜은 과거 180일 보도와 비교해 빼요.`;
 }

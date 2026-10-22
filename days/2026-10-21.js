@@ -821,135 +821,451 @@
  "skipped": [
   [
    "중앙일보 ← 다우키움·CJ·신세계",
-   "10/20 신세계 합류 보도와 같은 단계"
+   "10/20 신세계 합류 보도와 같은 단계",
+   [
+    {
+     "source": "비즈트리뷴",
+     "title": "신세계, CJ와 손잡고 중앙일보 인수 합류",
+     "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBhZWVfamEzdjk2VWUzU2QtUGQyYXJiWlNqTktZc21iSUdkOGVJUzRBM3pYUDQyOXBUdjg5cXV4UkdzTHdpT3RzZ1Y1ejBkQmdjYXFlV19mckY2WkhBT2FGZDBSYXhFeUY5aHlWandnYm0?oc=5"
+    },
+    {
+     "source": "한국미디어일보",
+     "title": "신세계, 다우키움·CJ와 중앙일보 인수 추진…5000억원대 신주 투자",
+     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBIaS1rYjR1YVB4SXFFTnlfc2RReDhWSjNsY3ZkbTlNbmF1VFhiTHpsVFZLdVBPa1EzTlpvSTJWZUJyZHdJRXQ0clJWLVR1Z0VqWUFCTlNpdndXa3FtcW9VN29zUm1KRXhZeUxoWUl2b25raEo3SVN2SmFrOVo?oc=5"
+    }
+   ]
   ],
   [
    "현대위아 방산 → 현대로템",
-   "10/19 인수 발표의 후속"
+   "10/19 인수 발표의 후속",
+   [
+    {
+     "source": "CEO스코어데일리",
+     "title": "[그래픽] 현대로템의 현대위아 특수사업부 인수 개요",
+     "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8tR2ZnSTR1c3pieGY1TTJSQVNaZGlydHFaWmxraEVXc3kxd1lwbnJoSjZyVERCenZRd0tVYkV1bEhacWNQbFpWb0dsa3BTcW1FVVl6QmZqbW5HWFdrcGxGYUN5T1ZmcmIt?oc=5"
+    }
+   ]
   ],
   [
    "SK해운",
-   "10/02~16 IPO 검토 보도와 같은 단계"
+   "10/02~16 IPO 검토 보도와 같은 단계",
+   [
+    {
+     "source": "더팩트",
+     "title": "SK해운 매각 불발에 IPO 검토…한앤코, LNG로 몸값 높일까",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5fNnpyUTVybEI0SC1IV1BCaFdyc3puS1NKWXRuMGxPY2lzVGpVSjNqdnRPWHBtalFqTnlMUk5oV2N0UEhZVDVhWExzZmtBTW03dXpxc9IBVEFVX3lxTE5fNnpyUTVybEI0SC1IV1BCaFdyc3puS1NKWXRuMGxPY2lzVGpVSjNqdnRPWHBtalFqTnlMUk5oV2N0UEhZVDVhWExzZmtBTW03dXpxcw?oc=5"
+    },
+    {
+     "source": "알파경제",
+     "title": "[분석] SK해운 매각 불발에 차입금만 6.4조…한앤코, 깊어지는 ‘엑시트’ 시름",
+     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBySUdaY1hYQjA1aFBranJveEpVZXRMZW4xZXBtdXprS1JWdFUxd3JoWlhZRjJrN0E0M1hLSDFBNzBpQ0FOTkR2RUp3TnI4YUZZUmtETVBMSVdwQ05RRUN2T1F2UVNuT2p5dE9xMm5B?oc=5"
+    }
+   ]
   ],
   [
    "CJ제일제당 전분당",
-   "10/18~19 '21일 본입찰' 보도와 같은 단계(입찰 결과 미보도)"
+   "10/18~19 '21일 본입찰' 보도와 같은 단계(입찰 결과 미보도)",
+   [
+    {
+     "source": "딜사이트",
+     "title": "[식품업계 담합 제재 후폭풍] CJ제일제당 사업재편 여파…전분당 매각가 산정 변수로",
+     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9iVnFpVFNELTVJbHpSOFlJZGhOaUlYU0d5TlB6Rm5mQk9haGZ0WFBmTTZDbXdSaGZYWFBBTzlkdndRUmtVakVqSkx2S1dLbDg?oc=5"
+    },
+    {
+     "source": "CEO저널",
+     "title": "전분당 매각 희망가 3,000억원에서 2,000억원으로…핵심소재 부문 겸임한 김찬호 CJ제일제당 대표, 담합 후폭풍 속 사업재편 시험대",
+     "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9lWE05RlBONFJyd29ERVYwOUhSZ0J2LUo0ZnBmenlweDZfN1dvZFZaaG9NZ1N2UDZJdUpvaEFPd3YwQl90MEozNkxxTXZJc2F3eEJXdkZfZERmNHJXc29ZNWtnMERlbTZkbWJj0gFrQVVfeXFMT2VYTTlGUE40UnJ3b0RFVjA5SFJnQnYtSjRmcGZ6eXB4Nl83V29kVlpob01nU3ZQNkl1Sm9oQU93djBCX3QwSjM2THFNdklzYXd4Qld2Rl9kRGY0cldzb1k1a2cwRGVtNmRtYmM?oc=5"
+    }
+   ]
   ],
   [
    "카스카디아CC ← 한투금융",
-   "10/01 인수 검토 보도와 같은 단계"
+   "10/01 인수 검토 보도와 같은 단계",
+   [
+    {
+     "source": "인베스트조선",
+     "title": "속도 더딘 한투금융 카스카디아CC 인수 협상…운영 방침 변수",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQY0NiMnQtVGRzNHRUSlpaWGNLS0dUVk5fMDdqU3o4OVlpcW90MEV3UjJjNk1RVThfaFZsS0pzazNYeGFKMXpLTlYzdXNxSE9qRUVSRUFxSVRBNjBtWm1nb1o2aVQyR2wwNEdkbE94ZjBqNEFueXVrUXBOMzM0NEZsNXhCaw?oc=5"
+    }
+   ]
   ],
   [
    "예별손보 → OK금융",
-   "10/08 SPA 체결의 후속 분석"
+   "10/08 SPA 체결의 후속 분석",
+   [
+    {
+     "source": "뉴스포트",
+     "title": "예별손보 인수 추가 자금 예상의 2배…OK금융, 정밀실사 후 판단은?",
+     "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE14R1B3Qk5YeG0weWEtbkZNUXhUYm9kaGlFNlpwU1R2aWo1TDkyQVpBTzRvZnE2eGN3Q3ZMYjVnOHVpS0llTl9VVnpmelhLYUZqMWFOZTdDMlo0U0NjODhiZDFRcWFJZnJCeXVB?oc=5"
+    },
+    {
+     "source": "인더스트리뉴스",
+     "title": "OK금융, 예별손보 인수단장에 송윤상 전 흥국화재 대표 선임",
+     "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1Ca3MyZEFQWWZCcWFJMkJDQlJNRVNVS0pxenZvWFNMdnFVR0xIbnJtN2FfZEJiTG9KQWNkNGUtdnBkZkJ2czFoSUt4am5ENGFzOXVkSENxWG4ySThMWFN1akR5RkxrdlZKczR3amU3eHFEZw?oc=5"
+    }
+   ]
   ],
   [
    "더코디 ← 구본호",
-   "10/07~15 인수 불발 수순 보도와 같은 단계"
+   "10/07~15 인수 불발 수순 보도와 같은 단계",
+   [
+    {
+     "source": "리버티코리아포스트",
+     "title": "'증권거래법 위반 전력' 구본호, 판토스코퍼레이션 앞세운 더코디 인수 차질... 소액주주 '피눈물'",
+     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1NcFA1dXlTODJXUU0yWjRZME9HX0JmbkM5T2MzYVkzSnFVUnBVV25ZMWJjaTF0UjBHMElFOVFkV2V3YWtZdmxKa1llMVJqOFJLQnQyUl84R0ZCakN1V1NacGlvdV9wcnPSAWdBVV95cUxNTXBQNXV5UzgyV1FNMlo0WTBPR19CZm5DOU9jM2FZM0pxVVJwVVduWTFiY2kxdFIwRzBJRTlRZFdld2FrWXZsSmtZZTFSajhSS0J0MlJfOEdGQmpDdVdTWnBpb3VfcHJz?oc=5"
+    }
+   ]
   ],
   [
    "파이온엑스",
-   "10/20 유증 인수자 변경 보도의 후속"
+   "10/20 유증 인수자 변경 보도의 후속",
+   [
+    {
+     "source": "Chosunbiz",
+     "title": "파이온엑스, 경영권 매각 난항에 파산 신청까지… 유동성 위기 직면 - 조선비즈",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZFZRLWZ1SlNaa256X1ZhdGw4WVhvbVhPdEthS2N2X3JYai1vVDlacTBCSXA3Q2F0MGk5elNWeGNyTGo2aVBPOUdBWEZ0TkMzNEh3UXBwbUFLQUZJSktxZ1hvRXJPWXBFUjRtS1NWSkwxTXdGWXFsdXFqRUs1ZTE3OGZfTmZ3WUnSAZsBQVVfeXFMTmdFRXRKcDFRLXNwVGlnRlZZTzRYTWlTbUtJNjRoZzh5ZnhzR0tPbWVuZktPeHlVTk05Z1lRTHd6S1gtUlNLZE5wcFM0U0lNSlptZ19DdFJocjVDZ1F4VC02NG8tMDBOSm9OWVJUVVlqTWlXOVdlQUp4bDV3YUl4b0hJZ3RKUFNwOWZrcWlTMDBsSDBfV0tTdTVySzg?oc=5"
+    }
+   ]
   ],
   [
    "코인원 ← OKX·한국투자증권",
-   "7/28 지분 매각 보도와 같은 단계"
+   "7/28 지분 매각 보도와 같은 단계",
+   [
+    {
+     "source": "CoinMarketCap",
+     "title": "OKX Ventures, Korea Investment Buy $106M Coinone Stake",
+     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBJZFI1OTd2YXBOOWZENHRzSnZhUWJJalZOVkNUZm9EVTBrbU5lME5BM3phWUdmeUlDNHdNSFUwV0FpMEQ0eUlCVDc5MmNZT1V2cHJ4M1NFTEd4ZVQyajMwTUFfUGUwMkpzVmc5M2xwVTdQQ01yLUdUVXpqUQ?oc=5"
+    }
+   ]
   ],
   [
    "Braze → Salesforce",
-   "10/20 인수 계약 발표"
+   "10/20 인수 계약 발표",
+   [
+    {
+     "source": "Yahoo Finance",
+     "title": "Salesforce agrees to buy Braze for $5.66 billion in AI push",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSWs3ZjZrSGtNWmlGald2V0tJMFdOREVxaEV2b2NPUjE1anBWOHZuVXQ4TmR1NEpXaE9kd3VEWXNzcFhXVnREb3Z2ZFM2Y29ydzlqRWxQcGxJVmFrb2hYR1JVSjRLZ3Y0bWlJZzAxcV9fSDVCbVZqUGFXUFFMOEo4a1phLUtqVy0yT3VQblFTS1d0NWdUMTliVA?oc=5"
+    },
+    {
+     "source": "MLex",
+     "title": "Salesforce agrees to acquire Braze for $5.66bn including debt",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUjdLZ0JIWDBxSXlidXpBdzdhaHhINDNOT2xLVzNwUnJ4OUhZS2RLbkpLblNEcl84cklfRllwTlpoUVhGUlVqUzA1XzdHWnZFMEd4ajJ1SXZ6TUlHZVlpTmJocHRnZHNvWFd4a0pwNG03X2VwSmJOWTNXV1FGc3Nna2tfZ0tPeF93WUtNRjE0aDYxR2VmNWpvWW8wMVZybnVqaG54bTRB0gFaQVVfeXFMUFVJTGdfYlBLOTNJdEoyQUZyVmlfYTBvY25iVVE4WkloMkM5QU5taC1oa1FjdF9mX0tER1h3OThKN2xISFFEQUlxd0lHVXl0S2xmSnYwdVZRa3JB?oc=5"
+    }
+   ]
   ],
   [
    "Prudential 브라질·멕시코 → CNP",
-   "10/20 매각 계약 발표의 후속(인수자 CNP 확인)"
+   "10/20 매각 계약 발표의 후속(인수자 CNP 확인)",
+   [
+    {
+     "source": "Atlas Magazine",
+     "title": "CNP Assurances to acquire Prudential Financial’s insurance business in Brazil and Mexico",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPeFRaem1uZTVteTFzZk1QS05RTkEtZ2s1S0NodUozZ3loWVEwN1ZuWFlBYnZIbzdLY3NNWEpwNkFnTThtcDBER0h4bXBQNW52QnZlUFI1R05sbGZDVngxeUNhc1ZOZ1I1OWxjMnppLVRCczBmRUVlOXRwVFNLQmE2c0ZBVjlxZEhKNmw1TFlRdld2blotSU1UMmtHUEpyRUFNdHZXVlZ1eVFqbEUyTlNGaF9rd2FGV21Eajhr?oc=5"
+    }
+   ]
   ],
   [
    "Myriad 산전진단 → Labcorp",
-   "10/20 매각 발표"
+   "10/20 매각 발표",
+   [
+    {
+     "source": "TradingView",
+     "title": "Myriad Genetics Offloads Struggling Prenatal Unit for $210 Million to Labcorp",
+     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNTV9DWW9UcnpZdk1uX0dqOXYxQjcxbEFyeElfcDdrRUhBWk5ZZVI1RUo0ZXUyZU92cVFGdkJqM2E0TEozbzhFOVFTN19maTYxRF9QMW8zTTdaSURkSDRtaVo1ckJRQVNlQjBIUDFnU0VzdnNCbE03MGtnQVMwMUhueUg0VHJNcmZLQTloc19uWng4amZvaFhkdHl4emVXWnlQRGl3QVBTM2llaFI2cUotWVBaSnNvZ1VJZk03cnljYS1Dc0JvR00wMnVvLWxFTFo2?oc=5"
+    }
+   ]
   ],
   [
    "Hunterdon Health",
-   "10/20 합병 계약 발표"
+   "10/20 합병 계약 발표",
+   [
+    {
+     "source": "WRNJ Radio",
+     "title": "Hackensack Meridian Health, Hunterdon Health sign definitive merger agreement",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOSXE1ZjNLSW1JbXNkWkowdVB2UHE2VXVSN0tTS1V4UWxTVlNpNmpiX1daWm9LTzJVck1RclZHWlVZVUVWcDBZbkNab19EUUZNNzhHSUx3TDRuM0dPRWxyTVFoN0JWY0FnMkRqYmdoTnVubWNDR1N1Z3pORUxBbnZGbHVpVE9kQ2hXSzE0MS1xRkJoSFhlSmNWYTVubGtKdVRt?oc=5"
+    },
+    {
+     "source": "Fierce Healthcare",
+     "title": "Hackensack Meridian Health signs definitive agreement to acquire Hunterdon Health, commits $230M",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdnloa2xiR3AyVjhWbERhWHJqNXdrNVFzREtqbE0zdmhmeW5Md0h6Vkl2aHVvb25OQ1VQUTJLVDFKMWdhalZ6OXhDZzF4aHRyRkY4NEg3SGFmeWtkNE9Oai0xQk9qS0Z0Vm1IRTBtTjBaTG5BakVOblBRaFRqcmd5NjJjbjBmb09WWWNFck4yMmNlNE52dExWWWJIQWp1TjBSQWVjSDE4WDhSVzZRUEVmZ3ZxMExJT2VCc1FENV9jWmg3VzFU?oc=5"
+    }
+   ]
   ],
   [
    "Agile Defense → Maximus",
-   "10/20 인수 발표"
+   "10/20 인수 발표",
+   [
+    {
+     "source": "Virginia Business",
+     "title": "Maximus to acquire IT contractor for $660M",
+     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0tSUJUdy11M1BCX3g5d2pYZk1CRHNUY3JmMjd1TEtOUF8tVW5tTTRLaEpIUmhDeDUxLWdtVV9PLWVSaHk0bHZmZzlMYlQ0QmFIQnRFSllHaE9MNmRmV2Y5bGpnT2hpb2NySGhDMzZqRnhHbHc1LXhwRHM0TQ?oc=5"
+    },
+    {
+     "source": "WashingtonExec",
+     "title": "Maximus Inks $660M Deal to Buy Agile Defense",
+     "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9rNmxJSjFlam5hM0ZxR2dFRGhScHM5V3VXaVNOOVA1VUFSQXMwWEhVTVg5S19ON3MydjlMS0l3NmJjcHUzaDhZV1JmWU1KLTR2cUF1VHJpMk5ZekktUzVGTkJoSjV4QQ?oc=5"
+    }
+   ]
   ],
   [
    "Onnec → CBRE",
-   "10/20 인수 발표"
+   "10/20 인수 발표",
+   [
+    {
+     "source": "finchannel",
+     "title": "CBRE agrees to buy Onnec to expand data-center services",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQnlBel9zNjdxNmROTzRNQU1qdDFPZ0Mxb3lFV2pkcGdZNmttTjhka3NNVW8wcGNHTzJDUmZyWXNXd0h3ZGN4YlJpb0pDcjJBTXR1QmdHY1E0V2ZGd25rV3NWRGpybjkzbnd4VEdES1pWZndBYm92czk4R2FhQXBpRk5LXzJaX2QxZHlndlU1MVNweWJDNlBjQ2h3aUYzSHBRSWRkOS1aUTBrOUo5ZmtHOEZsY2xDU0MweDFZ?oc=5"
+    },
+    {
+     "source": "Construction Index",
+     "title": "CBRE agrees $1bn Onnec acquisition",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNVDZwdkVUZzRVZVFUeU9UcWtMa241THg3RnRCb3dZWjdWenN3MTFZV2FoWFJJM1dJQldZX3ZMUjlEWS1XYm9YM1p1eVNQVGUtVkIyU3FreGtKOXpORHd4b0FLMGZpWG9QdjJ6ZnJrdXZZNk14NTRFbzh5dUdWOTF6TWZjUkZoRmhjakHSAZIBQVVfeXFMUDU5WHg3ZXBvMWlRQ0Jwb1daR2x3WW5mT3hxQXE0ajMwbTY1SVRzc1JnYm5LalpNMXhHd0lxVHg3TDhUSlU0MThlN1ZWWVdaZWpkbzF5ZnVHN0dlN01UaW54Nm1taXFHT1lDR0ZDMWxIUFVZZ055a3BjRDdWWFRJaG1hOGd3WERyQUo3WVVJU2kzTUE?oc=5"
+    }
+   ]
   ],
   [
    "Fnac Darty",
-   "10/20 EU 승인 보도와 같은 단계"
+   "10/20 EU 승인 보도와 같은 단계",
+   [
+    {
+     "source": "GlobeNewswire",
+     "title": "Fnac Darty: Takeover bid initiated by EP Group closing date of the tender offer on November 9, 2026",
+     "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPSEdPWEdvUTV2bTJuN3VmTkk4ejdXeWJ3OWZCSURaRDd3TnpEcG1LN1RsaVowdkdkbUc3QVRhNGRxZGlPeU5JYktRd09TNnZ6SWtfS2xNQmRzeE1JQVBWenZYU3BDU0tqZjFORlBEZWJnREhzMVdTZnVYS3hXdXhoSjhMQ3RZX1ZaLXpaZlg3eUFuLXRqTUJCWXk4NVpaRE9MU08taDA3VGlPeGdjOE5jTG1HNktBakt6bEREamF0SHFfd3V4SWF6ZFlEanM1dElnWlRuZGw1MEZTNTdOT0RKWXd6UGFqY1dXcHdwR3hxS0c4S1QwdXM1dXV2eUJ3UQ?oc=5"
+    },
+    {
+     "source": "Grande Consumo",
+     "title": "European Commission approves takeover bid by Daniel Křetínský for Fnac Darty",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQMXUtbjRpMFYxWjlSd2ZUMnE4ZmI2STBTRzZ2UHM0SXo4STVxZHFXYTRLcmg0M0tOWjgzb3NZVl82TkE1ZGpiWE1wTDdaUFNuRHJLNnd1b1BxR1dZc0ducTIxS3l3U3VpU1lsSFRHalJFNHVzLXljLTJ2YlZiVUtnQlJZalBGYXh0UE5DcG1heWg1NnJUcUppX0I0cmlfalBlN2F6d09nLXlBMUJD?oc=5"
+    }
+   ]
   ],
   [
    "Silence Therapeutics → Merck KGaA",
-   "10/19 인수 발표"
+   "10/19 인수 발표",
+   [
+    {
+     "source": "Investors in Healthcare",
+     "title": "UK: Merck KGaA agrees to acquire siRNA developer Silence Therapeutics in all-cash deal worth US$1.3bn",
+     "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPdXlReXAzZUZaVWtQelpFWWJYZUJpZ2RXUDhuUEtMS0ItLV9ITEF1Y080MW9wOFR2Wlk4dFlCaHhPRGZqWlZFN19yY3pVSGJWZ3FiVXlCR2YxVV8xQjVmUUI1WGlKWWEydjJXSDZETmRKaVRFVDFSNjVRUUt0VHZRbHQxbm53eF9BQUwxYkJ1bURvVUctLXNuZ21GLUhta2txcS1ISy1tMUwza01QZENRbGMzbmE0cW04c3JydFVLeFcya256MElmQkhkeFM1cXJUNW1PS0tyZVByb0ktRXNDaTl6M2JiUzdtdHF3RmlNLW53Y00?oc=5"
+    },
+    {
+     "source": "Indian Pharma Post",
+     "title": "Merck KGaA to acquire Silence Therapeutics for $1.3 billion",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcGR4cHRGLXdPMjZaMjQ3V1Z5RkVCczZPZTNpdDFJQ2FhTEYzQXFLUTROQk84QTZYZ1p2RVllYXQ5cUZOLUpqYkI5bWtrei0wQnJpTzlPZDJwZDlNSi1TODd5a1lGakVRX0ZsWHI3VHl2bkJHYWFRRmhDLWd4MXNhTVpFNHNiNDVsRHljNEFhM3c0MVRBVnFSaG5jNTRKc2FQVngw0gGnAUFVX3lxTE83akl2dDlCLVIxY1pLSHFhOXpaZm5uQ1Z4NWlUWGlXLWlHSllFN1VqLXczU3ZmUHExX2FYNGZqcFVLQ1pEUGFqQ21FY1ZKb3pjWlIwN2NScVlpOGZ6NW5JMTdGeldCLWVkM3ZmbzJyVzJOeFA3UVlqa1NpOGkyUE0xa2Jta2ZYelRwUXJwNF9QbGdLQVFHU2NZWlhYaFNWRDRlU3hnWWRz?oc=5"
+    }
+   ]
   ],
   [
    "Penske Automotive",
-   "10/17 상장폐지 인수 발표"
+   "10/17 상장폐지 인수 발표",
+   [
+    {
+     "source": "www.ownerdriver.com.au",
+     "title": "Penske Automotive Group to be taken private in merger deal",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPdUJjQjBDdndQdVlFNmxudnV0cUxqZ1pqdFdSQjNwRlRIcS1UNFB5UUxfNTRVOGZDSENKbHlpeFZ5cnB3MDFMY2FDc3dVOVowbWFMWnl3SWJUcm5nTkc1MlRxZ2l4ZFRRbnhrQTR2TmZWMGRyeFBkVW90QUZVajdkdW5PRENPckh3a3VQVVVyWTBQc0hp?oc=5"
+    }
+   ]
   ],
   [
    "Qiagen ← EQT",
-   "10/03 막바지 협상 보도와 같은 단계"
+   "10/03 막바지 협상 보도와 같은 단계",
+   [
+    {
+     "source": "TradingView",
+     "title": "Qiagen jumps on report EQT in advanced talks to purchase the testing firm",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOLXNtUklkd0dqbXh3VUMzZnBnSjlCVDhKbzNxUmZFSnpuSXV6cTdIMEVLUGtvSWRNWFFZb0hVekFZRTNVN0ZsUldTMDhENjZlaENUYXdZSHRqYzQyaENuRjl4TFZJVXVrUGdsdVE2d0NhdVJGN0I2dHRpMk01NkdkT1UycVZXNkJUcXU3dFFhSjZma2VGekg5TW1TQjFLS0gxV1ljWnZORjdaYV9nTjRzNW1mVVVzOFJac1pPZWlxNDNadmQ2WFBta290V1FBUU5qU0E?oc=5"
+    }
+   ]
   ],
   [
    "SITA ← Collins Aerospace 공항 사업",
-   "10/15 인수 발표"
+   "10/15 인수 발표",
+   [
+    {
+     "source": "Airport Industry-News",
+     "title": "SITA to Acquire Collins Aerospace Airport Solutions, Advancing Air Transport Innovation",
+     "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxOWXdLVjFLUGlmdUZIREZLZU5fRUdiN3MtTXpOcXl2NjNObXJ5YUZoc0dYM0FBYWY3Y0pfMmVXVk1MdDJXZHNhQVlSZG5RUnpqVGZkNnZOTTloYi12S3VvNlZLSjdBamMxRXdlek9nVW5saFlUazdYTHdjbVRHdDl3dHJzcW9xWTlDeHp2RV9sM2RmUWJxTEZtRVVTM1gyM2JQVnZGT1BubGhiN2ZGVmI3NENxMTBxNzJQdHFRalpocmpBWXoyZzRjRmxMc05TUExsbEh2MzMxV0hkNlVxZVBzb0lSaGRfOVFhbGlMOVBaVlZTcHZkVUNkSng1WUw1dkdfSUtfMEVYOER4T0JkX3JMTldab1lUc1NCSWQwWGFubXZUT0pTT3l2UXc3Mmp5cFE?oc=5"
+    }
+   ]
   ],
   [
    "Puig ← ISDIN",
-   "9/15 지분 인수 발표"
+   "9/15 지분 인수 발표",
+   [
+    {
+     "source": "AD HOC NEWS",
+     "title": "Puig agrees to buy ISDIN stake: Puig stock sits 1.07 percent below its high",
+     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOVEE3Z1M2VE5VT3hKcUR2UTVLRGtWd2k2LTFJejFMY1BHaTdfalJNLUY2YmoyUUliems4X3lzUEI5dWNQbFhlQWpFTnAxRGRvaGZHZ1BBRWlWR3lLUTBIRGJYbnVuUnI5NlpNUS1GYlI1NTU1NHBUc0RfNk03akNBMVZHWjNtREx2ckg1UDB6Q3A0aTB1Zm9keU5JTEZLQm1scVhsOFBtUHlkODFPelkzQW03alhXazd1cjJVOE1TWDhMOVBvTEMtNGtBa1dUWC1pZE9z?oc=5"
+    }
+   ]
   ],
   [
    "Poundland",
-   "10/20 매장 인수 후보 보도와 같은 단계"
+   "10/20 매장 인수 후보 보도와 같은 단계",
+   [
+    {
+     "source": "L’Express Franchise",
+     "title": "B&M joins bidders for Poundland stores as sale talks continue",
+     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQTy1DOXY4b1NYbGRMNC1Td1Bhc0pmUVY2Tm54UmhqLWtKZzF4VFdsM0hoUzZCcEhoZWplX3lXOGRRMGhhblNBbjZrVXFVdVV1bEV5aHdXdG8wLVNoU3RaUFZJTlNESVNyYTVZUEJxY21SMlBzbUZNMmxDU3NTcEdPdQ?oc=5"
+    },
+    {
+     "source": "Daily Mirror",
+     "title": "Poundland latest: Why is the high street chain struggling - and who could it be sold to?",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPaVFfSmQ4cThTRkd2djdNWnJyNmZ5OXlFb1ZROC1Qc0RpWW1FZnR1Y2t2VDJ6QlVkbjRsYjJSbW8yTWVyS2p5WDRpZVBQc185bWtqT2Y5cTN5Um8xV29jSlpSeWp0Q2p2VWRBcHlBd2ZibV9uTkFic09jVGlmWVdrTnhJN1hDdF9I0gGOAUFVX3lxTE1CRGJSWk52ckVKN2k2YVJpQ2NzcF9HSFFsSzVFR3F2TG02ZHRzNThob2NqWWJ5M3J1MFVydElyVEdoRGNxU2NuUVpmUFBKZEtqdjFHeWU0TURaX05RamNBZUhtVVhRTDV0OUlSQjJIcjlfYVhKWFhTSThlb0gwV01YN1phSEt1UzF0TUFlUFE?oc=5"
+    }
+   ]
   ],
   [
    "Elbit ← ISE",
-   "10/20 인수 발표"
+   "10/20 인수 발표",
+   [
+    {
+     "source": "Israel Defense",
+     "title": "Elbit Systems Acquires Subsea Robotics Maker ISE",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5tX2FZQkV6X1JYc2lEaWFCb2pPYTJISW5qX2lkVzloQUhCNUs2T29wdzZsOEIzM05fOGhsWUVobXJsWkppNnQtRE4tYm5mUl9PYk1YX3ZTcm0?oc=5"
+    },
+    {
+     "source": "Defensemirror.com",
+     "title": "Elbit Systems Completes Acquisition of Canadian Underwater Robotics Firm ISE",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOM2U3Tm9OLUpxZ1NDWlhIZDVyT1pNQUhHTTluRWVVXzAwbVVaeHdFT0pmbHN2dUd0bnpLejFNTjZOUXZwM3A3NnFpT0d1emd4ZVdqWXF6OFJWMkwxODZjbnprblVkcTVtcUxYcHRsZHp6Vm9YWFVHckJCOS1NN2F2M0VsYTVpczc5UXo3Zlg2VTc4LXBiRzFuNG9FNkltTGt2WHIzZXl4cVotSFRfYS1HRC1nVQ?oc=5"
+    }
+   ]
   ],
   [
    "TAP ← Lufthansa",
-   "10/18 지분 인수 발표"
+   "10/18 지분 인수 발표",
+   [
+    {
+     "source": "FTN news",
+     "title": "Lufthansa says it is in talks to take remaining 50.1% stake in TAP in future",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNYWNEYlN0dVo4SEdnNC1VLUxlNzhnTjNLeEF4NHlBTEZpWEg5WnNpak81SkRHN3lrVHZfUkpfNlV2QUcycl8yM1Jib2s0Vi0wMnI3TjZVV2c1S2RzT3k1ekRrcTZ2ZjVkNWVQaGhINk1zeHpLemE2aVJHSkdFeC1RakhtbllIdEtrZmZzQ0xrR1RpdElfaWZzZ05xejdONVN5Vmk5eFV6X0xiU0t5REJHckQ3bVNiOFR4?oc=5"
+    },
+    {
+     "source": "Yahoo Finance UK",
+     "title": "What does Lufthansa gain from its €1.2 billion TAP Air Portugal deal and when?",
+     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1NeHVDMlg2b212LVo3aWo4WGx5WFk5YzljSTVZeFplbk9wN1dOaGxLbHlxVHdiX1pkcnV2UWc0WjhwWTVzajV0WThLRmhWRlVVMXNvdzBhdXdPVVV2N282TXRNVWU5US0xNHUtYTRsanpvUlZYb0ZRdXFSeng?oc=5"
+    }
+   ]
   ],
   [
    "Ophir 루마니아 공장 → TTM",
-   "10/20 인수 발표"
+   "10/20 인수 발표",
+   [
+    {
+     "source": "SeeNews",
+     "title": "U.S.-based TTM Technologies to acquire Romania facility from MKS",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQY1BaZXFsZDNmdWdrcVAwUEF6MnRiZTZYbTFTVmxjakpWanhSaHlmQTRHMkFkWm1ETjRmZHEyWTlPekxGQS1LR1loS29HUy0yaVdtZk9KRi1WT1F6Vy03UVJ1MjRKMENrMzBUR1lCdzFzdGs5dVgtMG5PYnByaUV0ZjBDQXM3dk9OUU1aRVZacUkwQUJ5M1A2U2phX3Y?oc=5"
+    },
+    {
+     "source": "actmedia.eu",
+     "title": "US defence group TTM Technologies to acquire Romanian optics factory as part of USD 650 million deal",
+     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPWlcxcU1SejRrRFJRT2xycERlamtXV3JpbUlXSTZRbjVSRm5JaF9MZVdtbHVNY1dyS1ZMTFVWYWFWaXNaU0U2RE9HQ0VMN3UwUnlNQXAzR3E0ZHVTc0JjVFA3MDlfUlVXX2lXaW9uOEtNX085NHFHa3BpVXpJcnFOZWRXY1gtNnQtZ2lzUTdUSUNBYkYzellGdXZkQlpTdl85M3RkVDdNZlpHS2pnNnRkTEpRX1lOdTNma3d4RkZ4NmQtcVFtMkl1QjFBbkV1dl9DNzlv?oc=5"
+    }
+   ]
   ],
   [
    "Zodia Custody → Standard Chartered",
-   "10/20 인수 계약 발표"
+   "10/20 인수 계약 발표",
+   [
+    {
+     "source": "The Block",
+     "title": "Standard Chartered signs definitive agreements to acquire Zodia Custody",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNWGQtTjg3czRSWlBvYWNra2xwRUVkb1ZaSkNnckU0M0tNa3JqakdDMUU0S2QxNVJPSlRpZVFUVTd6Y1pNbmJzNWgtYjYzeUhjbEhkbFl5cXBJZU41RTBHazhJMmIyQnozVzI4aWNfdjAwTUNnYlFPVDlLV3AwM1VHTGROYkc0N184YW1DSGlTdUtoZWFEUlByQjNSZjN2Z2l5WFo0TU5pWmhmYWNIdDdRVGZJVmJsNDJwOG1Nd2p5c0xRcVlTTnc?oc=5"
+    },
+    {
+     "source": "Finextra Research",
+     "title": "Standard Chartered to acquire Zodia Custody",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPVEJqV3p6bUtWaXdvQ0g1TFQ0d0lLdVY3TklTUC1WYVhmZUUwUkVhUGxmSUJ3TVl0S1JVV1A1clRRVm1SODM1eUxKaFd4eFJvWkZLM05NMmJfY0o1VXRXNkFwaUJxLUpGSm42XzlENjkxMDNRZEFNdnRZZy1xZ2IwVUU1UHBfYUhvb1FTRGx2UQ?oc=5"
+    }
+   ]
   ],
   [
    "Sequence → Intuit",
-   "10/15 인수 발표"
+   "10/15 인수 발표",
+   [
+    {
+     "source": "The Paypers",
+     "title": "Intuit to acquire revenue platform Sequence",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNT3Nvck5wclVVSG55T20tWnM1OE1qMTR3Q3RyYzRRT2xSdG5BbXc1SUQwX0dmWU8ydVNRaVlMVHB4NHEtOHpmWnZMV2xsaEtReldZd2ZncFBGSWp4WDFfU3lUbHhUcDQzamVFZWpKMXVYSm8wN250blJYU3gwSjBodzlNeWZlaEJ5c2tlNTVCdGpQdVBFQlRnc3FQeVhSSUxJRC1VVWNnOHkxUE55U3Z6TG1oSXY3enFNS2tYMXp5ZWlxSXEzUG1xYy13?oc=5"
+    },
+    {
+     "source": "AD HOC NEWS",
+     "title": "Intuit agrees to buy Sequence as Intuit stock trades at EUR 295.50",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQTHZ1clpSQzVNRTRhTXd3N0kwc1ptWmRqZGxWWWFYTFIwMTRRVGJFcDhDMXVCMkEtVzZGQ0JmdFZ5ZmpTWTRnUFFiRFpHSHdGWV9QT1M4U3c3QWVqelZqQUlxSWEzMzBOUXZnVm1DSG45VWVqVGtSR1NYWV8za2FVZmJaTVZfNHRpdkVPRmFhT0laXy03MHBBQ05PU2c0TThBQWRPSUlSRnVzWmRwOXBCSGVNWjNXYy1uUmhqN0dOWlotclczTFZiOQ?oc=5"
+    }
+   ]
   ],
   [
    "AES ← GIP·BlackRock",
-   "9/24 승인 단계와 같음"
+   "9/24 승인 단계와 같음",
+   [
+    {
+     "source": "The Globe and Mail",
+     "title": "AES Merger Gains Key Regulatory Approvals in Europe, US",
+     "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQM3Y4UlR5R1JoT0xnVXhRNGpiVVBxWFBOQWptNlNkdldwc3dUNnpwU0MtRVpEQ2Fhejk2VzhYMXNRd1M5T3VSdmZjdUpoYjlFM3BQdjdiblh4RXFqUDNZdElTNU9MakFucW92dDBwNnJEZHJlYWV5Z3RNYTMyb2FOeEhLRjJlZjBoRl9zd3U3RUtDaWVSUHJzZ01leHJCLTFNWi1lUm44akFFX0tVVG5tTVhGYXVkSGtQaVlpcDJwbUZpMHoweWFoM2x3Vkw2X0cxUGtGaHVUcw?oc=5"
+    }
+   ]
   ],
   [
    "Perpetual 자산관리 → Bain",
-   "10/08 매각 진행 보도와 같은 단계"
+   "10/08 매각 진행 보도와 같은 단계",
+   [
+    {
+     "source": "TradingView",
+     "title": "PPT: Record Corporate Trust FUA offset Asset Management outflows; Bain sale process advanced",
+     "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPYWFtSFdlTzRkWE5HVWd5dUpIS1hsWXBhcFM3STlNTmZnN0tMbnFIRnQyX1p1alRnelZnQko0Y0hmY2NLNlJiZm5TVkdVYWNhel9fcHFGUGtoak5GdEU0Q3dPRzNpamVKdkF5bDctalZQd3BfX1ZLVjZmTXlJM0ZvbGFma3Z2M0IyR1RPVXlwQTdHZ1ZWXzYyUnk4Sm8yU3h5VVpOTjFpZjE2QlJnRWplSXR6SzI4VXhPSUVkaGx0SEVNdkpycmtrbVV5S0V1S3U4cVVRRDhPbW9OaTVBbVdqaTlYSk9JMHhpRlNEa3JfVVJVa09fVFpQR1pwQUhMczNhcU1z?oc=5"
+    }
+   ]
   ],
   [
    "Character.AI",
-   "10/15~19 파산 매각 절차 보도와 같은 단계"
+   "10/15~19 파산 매각 절차 보도와 같은 단계",
+   [
+    {
+     "source": "Quasa.io",
+     "title": "Character.AI Chapter 11: Chats Accessible During Sale",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcmkyX1BCTlk1d0pNNkoxSVcxNmd1dDRtT21uVnlNengwSlE3NnI2RXY2VEdLZnFzWjJRLU94c1lfX3ZpU2dhMUJ4c29MazhDV01tMFd5Q3F4cG4ycDNGOXpCc1BKTFZtLVZzUnRDNk5pbFdfc3BTTXJyeUY4Um1ocnJJYWpWTjRQOWhzdGtVMW5OVWtsNTJDZ3M0Ui1pR1pNbXl3?oc=5"
+    }
+   ]
   ],
   [
    "Al-Nassr ← RedBird·호날두",
-   "10/20 협상 막바지 보도와 같은 단계"
+   "10/20 협상 막바지 보도와 같은 단계",
+   [
+    {
+     "source": "Sports Tiger",
+     "title": "RedBird Capital in talks to buy 70% Stake in Cristiano Ronaldo’s Al-Nassr: Reports",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPQ3Y5dHh4Q2J2Zk9RZ19BSFRIU085TFFIQTl0TWZ0ZDZ1b0lMM3VXdU9zaDFjcWstTm9NWXRmQktCZGltaUMwVkdXcERjWnBfUmRTSkdDMjhEWWFqdTE0VzdrZDhRcFAwc2pJb1ozZXFZV2RTNHRwYnVwa1RnRkY3RXhDdlNxdDB5QWd5dkx6ZlBNa3hKZW5jQ1pmZmpfNE96cElRMmRTcEZac3RqakVNUDdublZlVUY2?oc=5"
+    },
+    {
+     "source": "www.footballtransfers.com",
+     "title": "Cristiano Ronaldo and AC Milan in talks to buy Al-Nassr",
+     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOc3loWnFCemxCaUNhVXN5MGkxa082MnNwQ2h5TGN3bGFaV2pCeWpQelpuLTNGbkU2MlF1dktraWlDbS1fQnJNSjFXaDBCMlIwN19GUHpRaVRoS2R3c0lEWUdOWFY5cG5MVWpsLTZBWFNRMVYtQXJ1RUJvQjhFSTc5ZTFHYVhPSXNUQ00zeHZLNExLYWVOMFdnSE81dy1DeU1nY2tZMGRHT3kyLUxQX1RPdkFTcUZpamo2bnVqWWJGYWdqdEV0SFFQd29DQUQ?oc=5"
+    }
+   ]
   ],
   [
    "IDBI Bank → Fairfax",
-   "10/19 승인 보도의 후속"
+   "10/19 승인 보도의 후속",
+   [
+    {
+     "source": "The Economic Times",
+     "title": "Challenges ahead for Fairfax's management of IDBI Bank post ₹52,878 crore stake deal approval",
+     "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOeFpNMGpiUjQ2RXZGandrWVlFcEp3UFgyMFlOWnB0TnEwYTFGclBOQ19iOV8xM2xfelZBZURidVRhc2FYR3hmd2xJUFJ2UmNsbG1qX3VjN2EyQm1aREtKR1VDVG0yVDVVLW9GUGZTaFBWdm93QjB2eDJtdWFsUWd6TnhOaG9mTE83eVByWUdQVGc5UHpPSUhGMkVJWGM1ZTBBcm52czd1clgzdUdlWjJPMVlFWXBCdzVQdmxpTXJnWWJpOWsyU1diWmgzcEVSejREeDczOUdaaXpqZ1B2YndKbVdnVEFPdnM2RVlSQUROdHY4WEd6MFNNcExBWTF5aExqcFd0MGlxYmnSAY4CQVVfeXFMTlpNTFk0OV9GaE9JQ2lBLUNJVjA5NnpuMHg2MEd3T1k0YUdHbzVVdzhBaUJya19fMFRmZ2x3S1VhX3pMQzFnemw0MjZzMXlYblVSR0ZxWm1nVjJjNDVmV1N5dDZ4TDJrQldkSlhtSEZITEstcEg3ZURzNzBZTmdSbngyQWpfbXhiVl9jcDRyMVJPdGJiQWlDYWNWZnRHZEloMWNacDl6RjQ5NlprLXZmbXRiSWdtb3lKTXhpdlN3b2Nrb29SV3B1Rmp1TXJEZVpEVFFndDFLLTc0RFNGelhQZzhMWF8wWkwyYTJ6X2h6ZmktRjIyZjdveGYyaTI0bFVUeVVSOFVKbThka1k3SDl3?oc=5"
+    }
+   ]
   ],
   [
    "NCS Multistage → Weatherford",
-   "9/01 인수 완료"
+   "9/01 인수 완료",
+   [
+    {
+     "source": "EnergyNow.com",
+     "title": "Weatherford to Acquire Oilfield Tech Firm NCS Multistage",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPQVVEMTd3cHpic3lQRjZ5eXBPY0xpZGQ5VjFTM0tRSWRSMjJRbHBONVk4eTVXX29QSXJjX0YyOEJJUzFVQmZFanZBUDhUWmRzN185T09WY3BGMUdSWkZuVzR6eXdtb2xfbXdSQlI5U0hpMlZ0YU5qdmltTE9hVkI5YjdsbkFOWklmZlNVOWwxYnE?oc=5"
+    }
+   ]
   ]
  ],
  "stats": {

@@ -612,99 +612,307 @@
  "skipped": [
   [
    "현대위아 방산 → 현대로템",
-   "10/19 3,584억 원 인수 발표의 후속 기사"
+   "10/19 3,584억 원 인수 발표의 후속 기사",
+   [
+    {
+     "source": "연합뉴스",
+     "title": "증권가, '현대위아 방산 인수' 현대로템에 \"사업 확장 기대\"",
+     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE11WXhDMkNDbkVPX0hHVW52Ynl3NU5KMTd0SFFaM1dTQVUwN01Ua1ZSLWFQdjBKZWpLQ3pKN3BQZlYtRXFIQl9zRGVnSlNiLW5mZkZFYWN0N0lReDdiUkR3b9IBYEFVX3lxTE11WXhDMkNDbkVPX0hHVW52Ynl3NU5KMTd0SFFaM1dTQVUwN01Ua1ZSLWFQdjBKZWpLQ3pKN3BQZlYtRXFIQl9zRGVnSlNiLW5mZkZFYWN0N0lReDdiUkR3bw?oc=5"
+    },
+    {
+     "source": "경남미디어",
+     "title": "현대위아, 방산 특수사업부문 3,583억원에 현대로템 양도",
+     "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA4YWlQX0xlbTdvMkpXQWFDUmxxV196eW1XcVpWVTVkbnk4aG1TNnJ6LUtJcFgtTTlsSlpMTXd6ZHdoampvR2ptNFN1OC0zNURPSTExc1p4Ynp5N2pzX3Jhc2IzSVVyaHg5aHZV?oc=5"
+    }
+   ]
   ],
   [
    "롯데손해보험 → 신한금융",
-   "10/19 지분 77% 매각 계약의 후속 분석"
+   "10/19 지분 77% 매각 계약의 후속 분석",
+   [
+    {
+     "source": "네이트뷰",
+     "title": "신한금융, 롯데손보 인수…신한EZ손보와 통합",
+     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE43WThpamtDQlBSVHhlRkxKbDlZX1B5cEh0dE1BVjNxclNTTXAydk5iSDBGTkpCLWxDdFYyRDdwQ0hWYVoxc0EyT044SnExWG9Vb1RNcFNn0gFWQVVfeXFMTjdZOGlqa0NCUFJUeGVGTEpsOVlfUHlwSHR0TUFWM3FyU1NNcDJ2TmJIMEZOSkItbEN0VjJEN3BDSFZhWjFzQTJPTjhKcTFYb1VvVE1wU2c?oc=5"
+    },
+    {
+     "source": "인베스트조선",
+     "title": "신한금융, 롯데손보 관리 가능? 돈도 사람도 시간도 없다",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOQ2psN1F3V3Z4MEptR1I4b1dOeWlyZ0VrRmNXZUZPOXFralQwWGFTZExJaW9rMmNibXhjMUFrelhFUTlzbmZxdW92ZmQ3eXQ2ZDFjdWhCT1U3aE1Ic0libmFMS3I1bV9RXzgydFQwRGVOZFRPQ3BJLUs5dmlFczkyUG1sNA?oc=5"
+    }
+   ]
   ],
   [
    "폴리펩타이드 → 삼성바이오로직스",
-   "10/19 '내년 1분기 완료' 보도와 같은 내용"
+   "10/19 '내년 1분기 완료' 보도와 같은 내용",
+   [
+    {
+     "source": "뉴스저널리즘",
+     "title": "삼성바이오로직스, 폴리펩타이드 인수 결제 연기…내년 1분기 완료",
+     "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1MdUd0OXRGSFpNSGJsSHR0Q0NBTUpQZEJYc056OE9LTVVKX2gwQ0dZek1JYk9EalRTZzF5cHhrOGwwcVloRGRVYi0xWjk1OTNJU0ZoYmI1QlYzR0FBbkNna1BwTTM5RDNGRWtF?oc=5"
+    }
+   ]
   ],
   [
    "맘스터치·버거킹",
-   "10/16 매물 보도와 같은 단계"
+   "10/16 매물 보도와 같은 단계",
+   [
+    {
+     "source": "머니투데이",
+     "title": "'몸값 1조' 맘스터치·버거킹 줄매물…차액가맹금·점주 협상권이 변수 - 머니투데이",
+     "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE90OW43OFpkMzd3SzRSRWFQc0dWSWJVRWd5SUw1WXhYakxhOGZYQjNSQklqVmQyY00zQmRuT2ozSG1LeG1XdlZYSUk1SkNjTXhoQUhjbTZtMDI2SUhPZjRUcTYwTGxtbU9YM2xqUUJlONIBb0FVX3lxTE90OW43OFpkMzd3SzRSRWFQc0dWSWJVRWd5SUw1WXhYakxhOGZYQjNSQklqVmQyY00zQmRuT2ozSG1LeG1XdlZYSUk1SkNjTXhoQUhjbTZtMDI2SUhPZjRUcTYwTGxtbU9YM2xqUUJlOA?oc=5"
+    }
+   ]
   ],
   [
    "인바이츠벤처스",
-   "10/19 매물 보도의 후속 분석"
+   "10/19 매물 보도의 후속 분석",
+   [
+    {
+     "source": "뉴스톱",
+     "title": "[인바이츠벤처스M&A]경영권 매각 시나리오 뜯어보니",
+     "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1RVEc3d3A1SFVhVWpjZFlXcjIzb1FxN3RTdE5aQ2FlQlZGNGZJbV9mN2VBeURaLU90RVp1UHdKcmtvS2N2bTFCckdSbWh5MzJJODBxVTUtVVZQVlQ2TkpqNTI4U0c4ck5aUnJQVy14OA?oc=5"
+    }
+   ]
   ],
   [
    "블루엠텍",
-   "10/14~15 지분 인수 보도의 후속"
+   "10/14~15 지분 인수 보도의 후속",
+   [
+    {
+     "source": "한스경제",
+     "title": "블루엠텍, 대주주는 231억 엑시트…남은 주주는 지분 희석 우려",
+     "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1CRGhJVU1xZEhnSEV0WnlRYlg0OEw2TmNfdnZFZTVaTC1hdHRadmpCQTIwLVBLNWZnYy13WWhUVWxMRjlUejdiOUtZajJWQkJxN093MzU1UEp6X1FaSVVXUGgtWjd3azlOcTAxQVlpONIBb0FVX3lxTE1CRGhJVU1xZEhnSEV0WnlRYlg0OEw2TmNfdnZFZTVaTC1hdHRadmpCQTIwLVBLNWZnYy13WWhUVWxMRjlUejdiOUtZajJWQkJxN093MzU1UEp6X1FaSVVXUGgtWjd3azlOcTAxQVlpOA?oc=5"
+    }
+   ]
   ],
   [
    "Silence Therapeutics → Merck KGaA",
-   "10/19 인수 발표"
+   "10/19 인수 발표",
+   [
+    {
+     "source": "Manufacturing Chemist",
+     "title": "Merck to acquire Silence Therapeutics in $1.3bn RNA deal",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQTERONkYxaGlQU0I3SHZfZWR1RDBRRExwb1AyNjFyYTFjN1NJanJUaGFZald4cDd1LVd5V0pkRkhkbFJnc2RVY3ZreUdTbzJPakNrYklwZFdVMllIa3FlWkotcmdGaFNRVXc3VmhJcXFNZnJqeEFnZTJiOEhXa1YzZW5Law?oc=5"
+    },
+    {
+     "source": "Briefs Finance",
+     "title": "Merck KGaA agrees to buy Silence Therapeutics for roughly $1.1 billion",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOaWFyekFhNmFUVGZVd1NueXM2NGZQS2RPRWN3T0RKU0F4aTJnbzVoc0twNnFoRlI5dy1zYnVZSE5mX0N2YU9wZW5IaHFVQUluQUhPcmlEUGptOWk3SlhJc3dBM2RXYUhmcktsVlRDbXpRSHowbnpkaGJyR2J0NzdZcTdUV202a1dTMGQyZmdYU1I?oc=5"
+    }
+   ]
   ],
   [
    "Cleanaway → EQT",
-   "10/19 인수 발표"
+   "10/19 인수 발표",
+   [
+    {
+     "source": "Tekedia",
+     "title": "Sweden’s EQT Agrees to Acquire Australia’s Cleanaway Waste Management in A$9.3bn Deal, Shares Surge 20%",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNTdWeXpVQlJFaHd6alI3eDVXY2Y0TkhCd2szX091dGh3cm0yc2RpSDY2NF9QMTVEZVZMM3N1cFZpVklvM0ZZWmFlbVJhY0RRSDNLU2JIV0IxNGZ6dmphXzk1RkVBVUR5TEIyTTI0S0ZSMFVJTVRCOGplNFNYTXA2T0RHRHpxWHNQcW05NmF3SGhfam1OdUMtQzUwOFZYclRrSHl0TnBRMHhBdEkzMURvY2d0MVhMeTdoVkl4dE5QVnI?oc=5"
+    }
+   ]
   ],
   [
    "Trivium Packaging → Silgan",
-   "10/19 인수 발표"
+   "10/19 인수 발표",
+   [
+    {
+     "source": "CT Insider",
+     "title": "A $3.4B packaging deal is reshaping Norwalk-based Silgan",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcGlvUWZTMmVNYXlfZXBBZ0dKU0dxbGZXaVRGT2FCcTZzWjkwMUlqZFRWMlkwSXU3b2JRMDc4dk05dDNzdFphQzlKWHhqMkdqTDVJZnFmYjVERDRkOHpFLXp3TFRGeFRpU1ZnZ24zRExmdE9nSFZWajhKX1BoNkJXY1dfZnhxaVRIX1NDbGRFWmV3TkYtTTlSUXpQSTlYSVozYnZ6cXR3?oc=5"
+    }
+   ]
   ],
   [
    "Atkore → Prysmian",
-   "10/19 거래종결 보도"
+   "10/19 거래종결 보도",
+   [
+    {
+     "source": "Minichart",
+     "title": "Prysmian Closes $95-Per-Share Atkore Buyout; ATKR to Delist From NYSE",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQlJZZFFuNFkzR3VTdWVsYVFYdTJNMno4dnFCY2pkYUpNdzZzb093MmxQajNhdHQ4am4zaUYydy1pZElIWkc3SkJrNXVzeDRvWE5ITTh2MlpNdFRZUU01XzhaRUt5dm5yYW1nRk95RXFQREE2UUdMOWlCWThoRk4zOExtMktyU09CQzhRVDhZTnBxdXFocGw2LTllTnBlcFVuWWo3R0RWeVhTT0pY?oc=5"
+    },
+    {
+     "source": "the Electrical Distributor magazine",
+     "title": "Prysmian Completes Atkore Acquisition",
+     "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9haWhIS0hvLW5vZkRpRWtNeXBfY3ZCSldrS21OMzRZSFdwX1JfS3RhTWJJRTJnQUN4c29TVUp3LUpFNFNpX2UyckdZMWx6QzZqZHFDUnFnWHFUcFJBNmR1Y1VkMWVOTDlS?oc=5"
+    }
+   ]
   ],
   [
    "Gooch & Housego → Arlington",
-   "10/19 거래종결 보도"
+   "10/19 거래종결 보도",
+   [
+    {
+     "source": "PE Hub",
+     "title": "Arlington Capital Partners completes take-private of UK photonics firm Gooch & Housego",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdFVMZ3c3TDVVRl9WQWVYeVdEUHJZU3dIeUVvOFhYY3BkbnBmdHEtX3dTNkxBVzNSejhCdmM3RndzRmN4Z0hfSFAyekdWR0tKY1lFMzI3ZzJpcTUtMjFHZFNfRHR3X3dGbTRMMXFFWTBiWkx1d09Pdmw0dVYxOFF2Zlc3bkFVTllkNFJVbmVZUUpVTEpOVUh1OWFKM3h0X3psQjU5Wm9QSnVaQm8?oc=5"
+    },
+    {
+     "source": "Optics.org",
+     "title": "Arlington completes Gooch & Housego buyout",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5Pck03Qk1qRDFQdlhoNlNHZUNQNzF5ZDlxV045Umo3Yjk1TkRqWlV1NlJ4QnpmYVlFTUlqSGM4Tm1qTkMxM0ZLVlRTSWtxM0JWM2FDV0xhZGt3a3VpeWRkelVtOVEzMHNtUS1iZVlCQ0FnQkcxbmEw?oc=5"
+    }
+   ]
   ],
   [
    "Corex → Saturn Oil & Gas",
-   "10/19 인수 발표"
+   "10/19 인수 발표",
+   [
+    {
+     "source": "Mugglehead Investment Magazine",
+     "title": "Saturn Oil & Gas agrees to buy Corex Resources for C$302M",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNWkVLUzRQWnVjck16elhvT3Mwa3F3RDdnVVNFdW1odEtOV2tGTERESGlpODFrRVhyX3lkQzNxeEx6ejdmSGlaQ19nQ3ZqWVVqTnJyS1lReVlWTEdnU29QczQwOUk3Q3dMdUYxSnhJNHJlcVM4V1EzUm9DTnZheExOa0NR?oc=5"
+    },
+    {
+     "source": "Hart Energy",
+     "title": "Saturn Oil & Gas Adds $214MM Corex Deal to Canada M&A Streak",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZ21Va0E2a0RBcUtVakpHQXNETlZBempmbTA2RWo0TG5ZaThJa2t0cUtGNTJ2anFyZktvNXBzUGlEc1BPSDVmLW9UeXBpSm5yYTc5M2t1QTNwYjVYc0FuZE5Va0ZHYk9BWXF5bkd4cGp4Um5ycGNfR3FrUHBSUnI2QkZ0UkNXMjQycThtbHQyVm5STDBxd1d6Wi1LS2FIZGhqRHRlRjcybktDTkZOWXhrSWN3?oc=5"
+    }
+   ]
   ],
   [
    "INRIX → Arity",
-   "10/19 인수 발표"
+   "10/19 인수 발표",
+   [
+    {
+     "source": "CollisionWeek",
+     "title": "Allstate’s Arity to Acquire Traffic Data Provider INRIX",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNa0dLdFBZMUplRnYtaHd4SXA1Nnl1Y1RSejZQM1k5d0VSckM1Tnotc1lqUXRyOXZrTXdweTlyNnVlU3BaOGI1bllSSV9QdGlGSmNubDU0R0V5a1JMOFBwT3YwTlFidURJQk5YX0tVcDRrXzdFQmZRckxfczlGVER1bXpJbHRjRWZIWDNzLXh6dnBZbGc?oc=5"
+    },
+    {
+     "source": "Pulse 2.0",
+     "title": "Arity To Acquire INRIX To Combine Driving Behavior And Transportation Intelligence",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPNlZLd0RySTFNZUtIMzdLMWZkS1QxaXlyaDQwYnprTVJ1M2xxT2VVcVRoOTJHZnUxVVExNmlkSk0zZkJ3MDlXamlpQVhYM05mQkNrZEZrSzk4SEdlRHktbVlhcVFTdUgxVjNCbnczZFJBVGxhaDgxdi1RV0E2VEluc3RudmpDd2FCWUZLOGpzWEdPZ0U4QURsMWlRbms0RDU4M3ZpMA?oc=5"
+    }
+   ]
   ],
   [
    "Odido → Apax",
-   "10/19 지분 인수 발표"
+   "10/19 지분 인수 발표",
+   [
+    {
+     "source": "HedgeCo.Net",
+     "title": "Apax Agreed to Buy Out Co-Investor Warburg Pincus’s Stake in Dutch Telecom Operator Odido",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNUTRxbkpXOWpWOVMzdDNCT1F5U0hEVDlicVhVTmgzZG0wZWl1aXNnaG0zSmZpN0hmQW9mZHFzNTM0cE5CR0labzRqVk5fQkFGRmVyNEZteTdBMTFpUHozV1BsV083c21kRWNTcWNRdE9rWXVaU0xfa2lRYU9TUVhmRXZFNG9ILW1Say12M0FrMWljenRpMWZKSHdYUTM4MUFlTEtLZEFxaXI4T1JUeDNUeVVreFFuMTVsNzdBWVJSMkNaQlFJ?oc=5"
+    }
+   ]
   ],
   [
    "Codifrance → Carrefour",
-   "10/19 구속력 있는 제안 보도와 같은 단계"
+   "10/19 구속력 있는 제안 보도와 같은 단계",
+   [
+    {
+     "source": "ad-hoc-news.de",
+     "title": "Carrefour agrees to buy Codifrance. Carrefour stock is 29.29 percent above its 52-week low",
+     "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNSy1GLWd1aXREaF95MGJjbFZMaVViYWp1Yzd0NXhCdU9kWlBWMVhOWGNUejhETkgyclY0OE5EUnpsaHcyQm1DNjN6dXJwRXNmdVZUMldLZTJ0TkE5Z0M2V2duZm1QN3lJc1poYnBxQmFQdDZnWGFyRzhTdVo1YUljZmowMkUweDAycWp4RlhSVmlLUk55V09GMkFUbjR4X0I3TVhWc0wtWF8wQmhLYzZfZDE2NjJZQWRIbFN1NDIySGd6aTRZVFJBaG1kOXVISDU4UTNzNnJVUHM2RHk4VDNKRHA1a2lNREk?oc=5"
+    }
+   ]
   ],
   [
    "Varonis → Proofpoint",
-   "10/17 인수 계약 발표"
+   "10/17 인수 계약 발표",
+   [
+    {
+     "source": "Kalkine Media",
+     "title": "Varonis and Proofpoint Announce Merger Agreement Set for Completion in Early 2027",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNTUlZaGYxM1lRMXFDcnhiUXZ2UEdlMjZOallQT20ybU9kWlVfUVRXNkJ5NnNwZlFPa1BZQmRsMmFUN0xpU1J6TXdLYWFiNHU5djhxMnR4U05odjB4MkROaGJQckJUczQ1cDQtd3lDeHAyanA2RVIzajBkRllpWUJsODI3UnluTXRxeEY0ZDVqU1RNMFIwZjN1NkZfRk9PR2EydXVJR3lRb1MwZ0hEVXZXN0V0RF9JM0gxVTh4YUxIcUNCM1JYTmZ3?oc=5"
+    }
+   ]
   ],
   [
    "ezCater → Uber",
-   "10/16 인수 발표"
+   "10/16 인수 발표",
+   [
+    {
+     "source": "ad-hoc-news.de",
+     "title": "Uber agrees to buy ezCater for USD 2.3 billion for Uber Technologies stock",
+     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNNGdYdjJQV1FhRE82bU5tdGVlLVViNF9SZ2pkazhqS2dadFBkZjA2dno2akoydE0wN3dmaHRVc012QjZOMXptVi1QdTFiTGw5NElBZGw5c0NEcFN1aTlib1VHOVN2cF9HY1RNNVladXNpc0dhbC1QU0w2NlpTY1JZQWNZWkJSaFFhWHFKeU9UaU9IakhLR2dJVDdEdEFBTktLS195cmRWbUM1Yzc1UkctV2NQenJZczZfUlNadEgxandOai05ZzRXeEhMVThjZGJMcEhB?oc=5"
+    }
+   ]
   ],
   [
    "AT&T Mexico → Televisa",
-   "10/14 매각 발표"
+   "10/14 매각 발표",
+   [
+    {
+     "source": "ad-hoc-news.de",
+     "title": "Grupo Televisa agrees to buy AT&T Mexico while Grupo Televisa stock costs EUR 2.17",
+     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPV3F2Y3BNbHROOW1FcE9OTDJUZnJqM2p5X0hhNlducm5VTW13WlpkVy1mNjQ3NEdNUnNla1VuN3ZWb0dRd2d4RHhHX1ZPVDROcGpKVlBJVnc0RFhQWmtQaGdMMDNyM010Sy1YdXZ3cVR1cy1Wd0RvTG9SMVFnak5jZkVwZlpzQU9XbkVuQXJqNDdYYWgyeXRrSzZjemdOYS1FRGtGVG50cWpwSGotMWtGZFpDNW14V2l3a2Ftb1d4U1lhZE9yX2oxaER1aVRXd1BQZ1FsQWxkNk5jdEQydTZPX2FpSQ?oc=5"
+    }
+   ]
   ],
   [
    "Allied Universal ← SoftBank",
-   "10/19 인수 검토 보도와 같은 단계"
+   "10/19 인수 검토 보도와 같은 단계",
+   [
+    {
+     "source": "The Paypers",
+     "title": "SoftBank in talks to buy security group Allied Universal",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZWItOG5yWkxuNlBMWXFnVUZISXFhV3FkcS1tMDN4R19LUS1rMHREdlVCMTF6RmMyQXVMcnhqbDhkN2FDQlE0ZzlQSDctLVlzUTRJTFpEUXBIWEFOZE81TUkwc0R1NmNiakZjbXVkMDM2SU1hZ21Qd2xkcGdPYVNyXzRBY19Fdy1JMFB2M1hNRVRpOFhNNnBZQmNxa3huLWI5WTU2a3EzRjJ2cEVRUURyMA?oc=5"
+    }
+   ]
   ],
   [
    "Accenture 중국 법인",
-   "10/18 매각 검토 보도와 같은 단계"
+   "10/18 매각 검토 보도와 같은 단계",
+   [
+    {
+     "source": "BigGo Finance",
+     "title": "Accenture Taps JPMorgan to Review $1.5 Billion Greater China Exit",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE95SFhKUkljN0UzZ3ZSYUhRYjBXSHlmY1JCQmhSSVh3QTlkT3c0dmRTbUhKYjJLcEpmN3ZYUmk4alU3T1hreVF2TF9QSTZOalhOMVV6RmM5bkFaaU94dTJNZkdfWnpoUzJpR2Y0cVVXczlXRXpaclE?oc=5"
+    },
+    {
+     "source": "TradingView",
+     "title": "Accenture Eyes $1.5 Billion Exit In Key Market as AI Strategy Shifts",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOcElEUUhLU0ZIcXA5MlgtVDl4bzdSbTVsSnhEelprLWRZZGFKWVpKdVVPLTh2Ukl5TVB5azU4ZTRTaDcxN0NNNm12dC1aOWdJMXZzQTJ2alRvc21xQWFUdTJudWJtUndBSVl5NFpLQ3d1RnItS2F5QmJXMERoY09wYjljOGRTMjVfeW16ZE0xU084TFZkUUVXOTQ3dXVFM3Zvbl9TRWdGRWhlR3VtQ2VrQWRPVmxyQ285STU4clRISjdIeUFvelE?oc=5"
+    }
+   ]
   ],
   [
    "True Religion",
-   "10/19 매각 검토 보도"
+   "10/19 매각 검토 보도",
+   [
+    {
+     "source": "Drapers",
+     "title": "True Religion said to be mulling sale",
+     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBXT3lDTDItNkN6eU12THF1SEVMUk5QRjJWR2NjekIyN0tTZ3FZUy01bGJlWHYzWDY4cTV5UWZwc19IQWMxcEVKRjJIUnVsbnh5Nm4wRVhTUDUxa3dwc3B6TkVXZmxWMmEzUXVTTHNMTkFkSkF2NEx2dWQ2ZFM?oc=5"
+    }
+   ]
   ],
   [
    "Sacyr 엔지니어링 부문",
-   "10/16 매각 검토 보도"
+   "10/16 매각 검토 보도",
+   [
+    {
+     "source": "ad-hoc-news.de",
+     "title": "Sacyr explores engineering sale: analysts target Sacyr stock at EUR 5.41",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPWjFxVG1kRzNkUnhNLUp1aGJ3MVR3alpMRld5VGJBekRhZ1hBRndMbUEwaldtd2t6X1luSlE2Z2s0Rmlja0ZUa1hKSzZSc3VRd2dMM09nZWdtNjNVZ0c0Y2JmUTFMbzBTZkV1T2toei1wbmszcjhBaWxGdGlUWjJoNTRlU29ZcndCQ0VieUJIZjhRbm9MQ0xmZkhsRUJaV3BLWlpvTmI2UEd3MktCVl9RRVRZbTJoaFhmR25LYUx6UXpqOXNwZFZCaS1YdzlmNUE?oc=5"
+    }
+   ]
   ],
   [
    "Shell LNG Canada 지분",
-   "4월부터 같은 입찰 경쟁 단계"
+   "4월부터 같은 입찰 경쟁 단계",
+   [
+    {
+     "source": "EnergyNow.com",
+     "title": "Apollo, Blackstone and KKR vie for Shell Stake in LNG Canada, Sources Say",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNWZ4bkRwdk81X2ROTE5ZRlFIcFM1Nm9ISENzOUtKc2FzYTZNeU9Ec2VqczZSUWRRMXdVekI4WVdNQVoyc0pYRkExMUpwS0M1d2NDSWFrSHpEVDdBZUhhSF9LdW90dFZtVVY5RkpkRHdDd083ZmpWcWxWOWhBbkpVcnlpU1liOVFBMUlkSUtodTB4cDJoNlZSa1JKSWFwaU1ob1JEQw?oc=5"
+    }
+   ]
   ],
   [
    "A-Cap ← Oaktree",
-   "10/17 협상 결렬 보도"
+   "10/17 협상 결렬 보도",
+   [
+    {
+     "source": "Insurance Journal",
+     "title": "Oaktree’s Deal to Buy A-Cap Insurer Crumbles, Spawning New Talks",
+     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1KYzRINDZVWmFVamlReGdiLXRjcVpRanBvbDhDVnpYREE5QjkwU3ByQmo4U3l0UFlXOUU0NC1HM2pmek1vLWRxQXdYMy00RDBpUXljZXR0MEROX1d4TzBXWGNKYzdtR3ozRjBDQTZIcEZ5RzJmU1I5OQ?oc=5"
+    }
+   ]
   ]
  ],
  "stats": {
