@@ -1,1 +1,1 @@
-window.DAY_INDEX = ["2026-10-20"];
+window.DAY_INDEX = ["2026-10-20", "2026-10-21"];
