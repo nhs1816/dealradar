@@ -62,22 +62,22 @@ button { font: inherit; color: inherit; }
 
 /* 마스트헤드 */
 .mast { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 20px;
-  border-bottom: 2px solid var(--ink); padding-bottom: 20px; }
-.brand { font: 900 17px/1 var(--f-display); letter-spacing: .02em; color: var(--accent); }
+  border-bottom: 2px solid var(--ink); padding-bottom: 13px; }
+.brand { font: 900 21px/1 var(--f-display); letter-spacing: .02em; color: var(--accent); }
 .brand span { color: var(--muted); font: 500 13px var(--f-mono); letter-spacing: .08em; margin-left: 8px; }
-h1 { font: 700 clamp(28px, 5.5vw, 40px)/1.12 var(--f-display); margin: 25px 0 0; text-wrap: balance; }
+h1 { font: 700 clamp(28px, 5.5vw, 35px)/1.12 var(--f-display); margin: 11px 0 0; text-wrap: balance; }
 /* 미니 달력: 제목 오른쪽에 늘 떠 있어요. 딜이 있는 날만 누를 수 있어요. */
-.calbox { width: 250px; max-width: 100%; box-sizing: border-box; background: var(--surface); border: 1px solid var(--line); border-radius: 7px; padding: 5px 6px 6px; display: grid; gap: 2px; }
+.calbox { width: 181px; max-width: 100%; box-sizing: border-box; background: var(--surface); border: 1px solid var(--line); border-radius: 7px; padding: 5px 6px 6px; display: grid; gap: 2px; }
 .cal-head { display: flex; justify-content: space-between; align-items: center; gap: 4px; height: 14px; }
-.cal-head h2 { margin: 0; font: 600 10.5px/1 var(--f-body); }
+.cal-head h2 { margin: 0; font: 600 9.5px/1 var(--f-body); }
 .cal-head .arrows { display: flex; gap: 1px; }
 .cal-head .arrows button { width: 16px; height: 14px; padding: 0; border: 0; background: none; border-radius: 3px; cursor: pointer; font-size: 12px; line-height: 1; color: var(--muted); }
 .cal-head .arrows button:hover:not(:disabled) { background: var(--accent-soft); color: var(--ink); }
 .cal-head .arrows button:disabled { opacity: .3; cursor: default; }
 .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; text-align: center; }
 .cal .wd { font-size: 9px; line-height: 11px; color: var(--muted); }
-.day { height: 15px; border-radius: 3px; border: 0; background: none; display: flex; align-items: center; justify-content: center;
-  font: 500 11px/1 var(--f-mono); color: var(--muted); opacity: .4; padding: 0; }
+.day { height: 13px; border-radius: 3px; border: 0; background: none; display: flex; align-items: center; justify-content: center;
+  font: 500 9px/1 var(--f-mono); color: var(--muted); opacity: .4; padding: 0; }
 .day.has { cursor: pointer; opacity: 1; color: var(--accent); font-weight: 700; background: var(--accent-soft); }
 .day.has:hover { outline: 1px solid var(--accent); }
 .day.sel { background: var(--accent); color: var(--surface); }
