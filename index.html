@@ -69,7 +69,28 @@ h1 { font: 700 clamp(26px, 5vw, 38px)/1.15 var(--f-display); margin: 8px 0 0; te
 .datenav { display: flex; gap: 6px; align-items: center; }
 .datenav button { width: 38px; height: 38px; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; cursor: pointer; font-size: 18px; }
 .datenav button:disabled { opacity: .35; cursor: default; }
-.datenav select { height: 38px; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 0 8px; font: 500 13px var(--f-mono); color: var(--ink); }
+.datenav #calBtn { width: auto; padding: 0 12px; font: 500 13px var(--f-mono); display: inline-flex; align-items: center; gap: 6px; }
+.datenav #calBtn[aria-expanded="true"] { border-color: var(--ink); }
+
+/* 달력: 날짜 버튼을 누르면 펼쳐져요. 딜이 있는 날만 누를 수 있어요. */
+.calbox { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; max-width: 380px; width: 100%; box-sizing: border-box; justify-self: end; }
+.cal-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.cal-head h2 { margin: 0; font: 700 17px var(--f-display); }
+.cal-head .arrows { display: flex; gap: 6px; }
+.cal-head .arrows button { width: 32px; height: 32px; border: 1px solid var(--line); background: none; border-radius: 8px; cursor: pointer; }
+.cal-head .arrows button:disabled { opacity: .35; cursor: default; }
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+.cal .wd { font-size: 11.5px; color: var(--muted); padding-bottom: 2px; }
+.day { aspect-ratio: 1; border-radius: 10px; border: 1px solid transparent; background: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font: 500 13.5px var(--f-mono); color: var(--muted); opacity: .5; padding: 0; }
+.day.has { cursor: pointer; opacity: 1; color: var(--ink); border-color: var(--line); background: var(--surface); }
+.day.has::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+.day.has:hover { border-color: var(--muted); }
+.day.sel { background: var(--accent); border-color: var(--accent); color: var(--surface); font-weight: 600; }
+.day.sel::after { background: var(--surface); }
+.day.today { text-decoration: underline; text-underline-offset: 3px; }
+.cal-foot { margin: 0; font-size: 12px; color: var(--muted); }
+@media (max-width: 600px) { .calbox { max-width: none; justify-self: stretch; } }
 
 .summary { margin: 0; max-width: 68ch; font-size: 16px; }
 .tally { display: flex; flex-wrap: wrap; gap: 8px 14px; font: 500 13px var(--f-body); color: var(--muted); }
@@ -141,10 +162,19 @@ footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line)
     </div>
     <nav class="datenav" aria-label="날짜 이동">
       <button id="prevDay" aria-label="이전 날짜">‹</button>
-      <select id="daySel" aria-label="날짜 선택"></select>
+      <button id="calBtn" aria-expanded="false" aria-controls="calbox"></button>
       <button id="nextDay" aria-label="다음 날짜">›</button>
     </nav>
   </header>
+
+  <div class="calbox" id="calbox" hidden>
+    <div class="cal-head">
+      <h2 id="calTitle"></h2>
+      <div class="arrows"><button id="calPrev" aria-label="이전 달">‹</button><button id="calNext" aria-label="다음 달">›</button></div>
+    </div>
+    <div class="cal" id="cal"></div>
+    <p class="cal-foot" id="calFoot"></p>
+  </div>
 
   <p class="summary" id="summary"></p>
   <div class="tally" id="tally"></div>
@@ -215,9 +245,11 @@ function card(d) {
 }
 
 async function render() {
-  const sel = $("daySel"), i = index.indexOf(state.day);
+  const i = index.indexOf(state.day);
   $("prevDay").disabled = i <= 0; $("nextDay").disabled = i >= index.length - 1;
-  sel.value = state.day;
+  $("calBtn").innerHTML = state.day ? `${esc(state.day.slice(5).replace("-", "."))} <span aria-hidden="true">▾</span>` : "날짜";
+  $("calBtn").setAttribute("aria-label", "달력 열기" + (state.day ? `, 지금 ${label(state.day)}` : ""));
+  renderCal();
   document.querySelectorAll("[data-r]").forEach(b => b.setAttribute("aria-pressed", b.dataset.r === state.r));
   document.querySelectorAll("[data-s]").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === state.s));
   if (!state.day) { $("feed").innerHTML = '<p class="empty">아직 모은 날짜가 없어요. 매일 아침 전날 기사가 여기에 쌓여요.</p>'; return; }
@@ -247,10 +279,47 @@ async function render() {
   $("foot").textContent = `구글 뉴스에서 ${state.day} 하루 동안 나온 M&A 관련 기사 ${st.raw ?? "-"}건(국내 ${st.ko ?? "-"}, 해외 ${st.en ?? "-"})을 모아 딜 단위로 정리했어요. 이미 같은 단계로 보도된 딜은 과거 180일 보도와 비교해 빼요.`;
 }
 
-$("daySel").innerHTML = index.slice().reverse().map(d => `<option value="${d}">${d}</option>`).join("");
-$("daySel").onchange = e => { state.day = e.target.value; render(); };
-$("prevDay").onclick = () => { state.day = index[index.indexOf(state.day) - 1]; render(); };
-$("nextDay").onclick = () => { state.day = index[index.indexOf(state.day) + 1]; render(); };
+// 달력: 보고 있는 날짜의 달을 보여주고, 딜이 있는 날만 버튼이에요.
+const ymd = (y, m, d) => `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+const ymOf = d => { const [y, m] = d.split("-").map(Number); return [y, m - 1]; };
+const TODAY = (() => { const t = new Date(); return ymd(t.getFullYear(), t.getMonth(), t.getDate()); })();
+const HAS = new Set(index);
+let calYM = state.day ? ymOf(state.day) : ymOf(TODAY);
+const ymKey = ([y, m]) => y * 12 + m;
+function renderCal() {
+  const [y, m] = calYM;
+  $("calTitle").textContent = `${y}년 ${m + 1}월`;
+  const first = new Date(y, m, 1).getDay(), days = new Date(y, m + 1, 0).getDate();
+  let h = [..."일월화수목금토"].map(w => `<span class="wd">${w}</span>`).join("");
+  for (let k = 0; k < first; k++) h += "<span></span>";
+  for (let d = 1; d <= days; d++) {
+    const ds = ymd(y, m, d);
+    const cls = ["day", HAS.has(ds) ? "has" : "", ds === state.day ? "sel" : "", ds === TODAY ? "today" : ""].filter(Boolean).join(" ");
+    h += HAS.has(ds)
+      ? `<button class="${cls}" data-d="${ds}" aria-label="${m + 1}월 ${d}일 딜 보기"${ds === state.day ? ' aria-current="date"' : ""}>${d}</button>`
+      : `<span class="${cls}" aria-label="${m + 1}월 ${d}일 발행 없음">${d}</span>`;
+  }
+  $("cal").innerHTML = h;
+  $("cal").querySelectorAll("button.day").forEach(b => b.onclick = () => { state.day = b.dataset.d; toggleCal(false); render(); });
+  const inMonth = index.filter(d => d.startsWith(ymd(y, m, 1).slice(0, 8))).length;
+  $("calFoot").textContent = inMonth ? `이 달에 정리한 날 ${inMonth}일 · 점 찍힌 날을 누르세요.` : "이 달에는 정리한 날이 없어요.";
+  $("calPrev").disabled = !index.length || ymKey(calYM) <= ymKey(ymOf(index[0]));
+  $("calNext").disabled = !index.length || ymKey(calYM) >= ymKey(ymOf(index[index.length - 1]));
+}
+function toggleCal(open) {
+  const box = $("calbox");
+  open = open ?? box.hidden;
+  if (open && state.day) calYM = ymOf(state.day);
+  box.hidden = !open;
+  $("calBtn").setAttribute("aria-expanded", open);
+  if (open) renderCal();
+}
+$("calBtn").onclick = () => toggleCal();
+$("calPrev").onclick = () => { calYM = calYM[1] === 0 ? [calYM[0] - 1, 11] : [calYM[0], calYM[1] - 1]; renderCal(); };
+$("calNext").onclick = () => { calYM = calYM[1] === 11 ? [calYM[0] + 1, 0] : [calYM[0], calYM[1] + 1]; renderCal(); };
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("calbox").hidden) { toggleCal(false); $("calBtn").focus(); } });
+$("prevDay").onclick = () => { state.day = index[index.indexOf(state.day) - 1]; calYM = ymOf(state.day); render(); };
+$("nextDay").onclick = () => { state.day = index[index.indexOf(state.day) + 1]; calYM = ymOf(state.day); render(); };
 $("stageSeg").innerHTML = `<button data-s="전체" aria-pressed="true">전체</button>`
   + GROUPS.map(g => `<button data-s="${g.key}" aria-pressed="false">${g.name}</button>`).join("");
 document.querySelectorAll("[data-r],[data-s]").forEach(b => b.onclick = () => {
