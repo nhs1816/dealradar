@@ -28,113 +28,146 @@ body{margin:0;-webkit-tap-highlight-color:transparent}
 <body>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@700;900&display=swap">
 <style>
-/* 레이아웃: 날짜 마스트헤드 → 요약·필터 → 국내/해외 딜 카드(넓으면 2열) → 제외 목록. 카드마다 딜 단계 사다리. */
+/* 레이아웃: 날짜 → 요약 → 딜 지도(단계별 보드, 누르면 걸러짐) → 지역 탭 → 딜 목록 → 제외 목록.
+   단계는 순서가 있는 값이라 황토(검토) → 남색(완료)으로 차례로 짙어지는 색을 써요. */
 :root {
-  --bg: #eef2f0; --surface: #ffffff; --ink: #14201c; --muted: #5b6a64; --line: #d5ddd9;
-  --accent: #0f6e56; --accent-soft: #dcefe8;
-  /* 딜 단계 5색: 검토(호박) → IM·실사 → 입찰·협상 → 계약·승인 → 인수 완료(남색) */
-  --s1: #b0601a; --s2: #8a7300; --s3: #3d7f3a; --s4: #0f6e56; --s5: #2a55b0;
-  --track: #dfe6e2;
+  --bg: #eceff2; --surface: #fbfcfd; --ink: #18202e; --muted: #5d6776; --line: #d2d8df; --hover: #e2e7ec;
+  --s1: #a8741f; --s2: #7f8530; --s3: #2f8068; --s4: #2a6593; --s5: #343f8c; --s0: #8a4b4b;
+  --track: #dde2e8;
   --f-display: "Noto Serif KR", "Apple SD Gothic Neo", serif;
   --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #0f1614; --surface: #17211e; --ink: #e4ece8; --muted: #95a59f; --line: #2a3733;
-  --accent: #4cc39d; --accent-soft: #173a30;
-  --s1: #e59a55; --s2: #d2b640; --s3: #7cc06f; --s4: #4cc39d; --s5: #87a8f2;
-  --track: #2a3733; color-scheme: dark } }
+  --bg: #11151c; --surface: #191f28; --ink: #e5e9ef; --muted: #98a2b1; --line: #2c3440; --hover: #222a35;
+  --s1: #d8a650; --s2: #b8bd5c; --s3: #5fbf9f; --s4: #6ea6d6; --s5: #9aa5ec; --s0: #d88f8f;
+  --track: #2c3440; color-scheme: dark } }
 :root[data-theme="dark"] {
-  --bg: #0f1614; --surface: #17211e; --ink: #e4ece8; --muted: #95a59f; --line: #2a3733;
-  --accent: #4cc39d; --accent-soft: #173a30;
-  --s1: #e59a55; --s2: #d2b640; --s3: #7cc06f; --s4: #4cc39d; --s5: #87a8f2;
-  --track: #2a3733; color-scheme: dark }
+  --bg: #11151c; --surface: #191f28; --ink: #e5e9ef; --muted: #98a2b1; --line: #2c3440; --hover: #222a35;
+  --s1: #d8a650; --s2: #b8bd5c; --s3: #5fbf9f; --s4: #6ea6d6; --s5: #9aa5ec; --s0: #d88f8f;
+  --track: #2c3440; color-scheme: dark }
 
-body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--f-body); }
-.wrap { max-width: 1040px; margin: 0 auto; padding-block: 20px 56px;
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 var(--f-body); font-variant-numeric: tabular-nums; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 22px 56px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-  display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--s4); outline-offset: 2px; }
 
-/* 마스트헤드 */
-.mast { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 20px;
-  border-bottom: 2px solid var(--ink); padding-bottom: 13px; }
-.brand { font: 900 21px/1 var(--f-display); letter-spacing: .02em; color: var(--accent); }
-.brand span { color: var(--muted); font: 500 13px var(--f-mono); letter-spacing: .08em; margin-left: 8px; }
-h1 { font: 700 clamp(28px, 5.5vw, 35px)/1.12 var(--f-display); margin: 11px 0 0; text-wrap: balance; }
-/* 미니 달력: 제목 오른쪽에 늘 떠 있어요. 딜이 있는 날만 누를 수 있어요. */
+/* 머리: 앱 이름은 작게, 날짜를 크게 */
+.mast { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 14px 20px; }
+.brand { display: flex; align-items: center; gap: 8px; font: 700 14px/1 var(--f-body); color: var(--muted); }
+.brand svg { width: 18px; height: 18px; flex: none; }
+h1 { font: 900 clamp(32px, 7vw, 46px)/1.08 var(--f-display); margin: 10px 0 0; letter-spacing: -.01em; }
+h1 small { display: block; font: 600 15px/1.4 var(--f-body); color: var(--muted); margin-top: 8px; letter-spacing: 0; }
+
+/* 미니 달력 (크기는 tune.html 로 맞춘 값 그대로) */
 .calbox { width: 181px; max-width: 100%; box-sizing: border-box; background: var(--surface); border: 1px solid var(--line); border-radius: 7px; padding: 5px 6px 6px; display: grid; gap: 2px; }
 .cal-head { display: flex; justify-content: space-between; align-items: center; gap: 4px; height: 14px; }
 .cal-head h2 { margin: 0; font: 600 9.5px/1 var(--f-body); }
 .cal-head .arrows { display: flex; gap: 1px; }
 .cal-head .arrows button { width: 16px; height: 14px; padding: 0; border: 0; background: none; border-radius: 3px; cursor: pointer; font-size: 12px; line-height: 1; color: var(--muted); }
-.cal-head .arrows button:hover:not(:disabled) { background: var(--accent-soft); color: var(--ink); }
+.cal-head .arrows button:hover:not(:disabled) { background: var(--hover); color: var(--ink); }
 .cal-head .arrows button:disabled { opacity: .3; cursor: default; }
 .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; text-align: center; }
 .cal .wd { font-size: 9px; line-height: 11px; color: var(--muted); }
 .day { height: 13px; border-radius: 3px; border: 0; background: none; display: flex; align-items: center; justify-content: center;
-  font: 500 9px/1 var(--f-mono); color: var(--muted); opacity: .4; padding: 0; }
-.day.has { cursor: pointer; opacity: 1; color: var(--accent); font-weight: 700; background: var(--accent-soft); }
-.day.has:hover { outline: 1px solid var(--accent); }
-.day.sel { background: var(--accent); color: var(--surface); }
+  font: 500 9px/1 var(--f-body); color: var(--muted); opacity: .4; padding: 0; }
+.day.has { cursor: pointer; opacity: 1; color: var(--ink); font-weight: 700; background: var(--hover); }
+.day.has:hover { outline: 1px solid var(--muted); }
+.day.sel { background: var(--ink); color: var(--surface); }
 .day.today { text-decoration: underline; text-underline-offset: 2px; }
 
-.summary { margin: 0; max-width: 68ch; font-size: 16px; }
-.tally { display: flex; flex-wrap: wrap; gap: 8px 14px; font: 500 13px var(--f-body); color: var(--muted); }
-.tally b { font: 500 13px var(--f-mono); color: var(--ink); }
-.tally span { display: inline-flex; gap: 6px; align-items: center; }
-.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.summary { margin: 0; max-width: 62ch; font-size: 16.5px; line-height: 1.7; }
 
-/* 필터 */
-.filters { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  background: var(--bg); padding-block: 8px; }
+/* 딜 지도: 단계 다섯 칸에 그날 딜 이름을 꽂아 둔 보드. 칸 머리를 누르면 그 단계만, 이름을 누르면 그 카드로 */
+.board { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.board-cols { display: grid; grid-template-columns: minmax(0, 1fr); }
+.col { --sc: var(--muted); display: grid; grid-template-columns: 8.5em minmax(0, 1fr); align-items: start; gap: 4px 12px;
+  padding: 10px 14px; border-top: 1px solid var(--line); }
+.col:first-child { border-top: 0; }
+.col-h { display: flex; flex-direction: column; gap: 6px; border: 0; background: none; padding: 2px 0 0; text-align: left; cursor: pointer; }
+.col-h .nm { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 13.5px; font-weight: 600; }
+.col-h .nm b { font-size: 17px; font-weight: 700; color: var(--sc); }
+.col-h .bar { height: 4px; border-radius: 2px; background: var(--sc); }
+.col.zero .col-h { cursor: default; }
+.col.zero .col-h .nm, .col.zero .col-h .nm b { color: var(--muted); font-weight: 500; }
+.col.zero .col-h .bar { background: var(--track); }
+.col.off { opacity: .38; }
+.col.on { background: color-mix(in srgb, var(--sc) 7%, transparent); }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; min-width: 0; padding-top: 1px; }
+.chip { border: 1px solid color-mix(in srgb, var(--sc) 35%, var(--line)); background: none; border-radius: 6px; padding: 2px 8px;
+  font-size: 13px; line-height: 1.5; cursor: pointer; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip:hover { background: color-mix(in srgb, var(--sc) 12%, transparent); }
+.chip .rg { color: var(--muted); font-size: 11.5px; margin-right: 4px; }
+.chip.hid { opacity: .4; }
+.chips .none { color: var(--muted); font-size: 13px; }
+.board-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding: 8px 14px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--muted); }
+.board-foot button { border: 0; background: none; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
+@media (min-width: 760px) {
+  .board-cols { grid-template-columns: repeat(var(--n, 5), minmax(0, 1fr)); }
+  .col { grid-template-columns: minmax(0, 1fr); border-top: 0; border-left: 1px solid var(--line); padding: 12px 12px 14px; gap: 10px; align-content: start; }
+  .col:first-child { border-left: 0; }
+  .chips { flex-direction: column; align-items: flex-start; }
+  .chip { white-space: normal; text-align: left; overflow-wrap: anywhere; }
+}
+
+/* 지역 탭 (위에 붙어 다녀요) */
+.filters { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); padding-block: 8px; margin-block: -8px; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
-.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); padding: 3px; }
-.seg { max-width: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
-.seg button { flex: none; white-space: nowrap; border: 0; background: none; padding: 5px 14px; border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--muted); }
-.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.seg { display: inline-flex; border-bottom: 1px solid var(--line); gap: 18px; }
+.seg button { border: 0; background: none; padding: 4px 0 6px; margin-bottom: -1px; cursor: pointer; font-size: 15px; font-weight: 600; color: var(--muted); border-bottom: 2px solid transparent; }
+.seg button[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.seg button small { font-size: 12px; font-weight: 500; margin-left: 3px; }
+.fnote { font-size: 13px; color: var(--muted); }
+.fnote button { border: 0; background: none; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
 
-/* 섹션 */
+/* 지역 묶음 */
 .region { display: grid; gap: 12px; }
-.region h2 { font: 700 18px var(--f-display); margin: 0; display: flex; align-items: baseline; gap: 10px; }
-.region h2 small { font: 500 12px var(--f-mono); color: var(--muted); }
+.region h2 { font: 700 20px var(--f-display); margin: 0; display: flex; align-items: baseline; gap: 10px; }
+.region h2 small { font: 500 13px var(--f-body); color: var(--muted); }
 .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); }
 
-/* 딜 카드 */
-.deal { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 16px 14px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; align-content: start; }
-.top { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; }
-.pill { font-weight: 600; padding: 2px 9px; border-radius: 999px; color: var(--sc); background: color-mix(in srgb, var(--sc) 14%, transparent); }
+/* 딜 카드: 왼쪽 띠 색이 단계 */
+.deal { --sc: var(--muted); background: var(--surface); border-radius: 4px 10px 10px 4px; border-left: 4px solid var(--sc);
+  padding: 15px 16px 13px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; align-content: start; scroll-margin-top: 64px; }
+.top { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: 12.5px; }
+.stg { font-weight: 700; color: var(--sc); }
 .sector { color: var(--muted); }
-.kind { margin-left: auto; color: var(--muted); }
-.deal h3 { margin: 0; font-size: 16.5px; line-height: 1.45; font-weight: 600; text-wrap: balance; }
-.terms { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0; font-size: 13.5px; }
+.kind { margin-left: auto; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; }
+.kind.new { color: var(--ink); border-color: var(--ink); }
+.deal h3 { margin: 0; font-size: 17px; line-height: 1.45; font-weight: 700; text-wrap: balance; }
+.terms { display: grid; grid-template-columns: auto 1fr; gap: 3px 14px; margin: 0; font-size: 13.5px; }
 .terms dt { color: var(--muted); }
 .terms dd { margin: 0; min-width: 0; }
-.terms dd.val { font-family: var(--f-mono); font-size: 13px; }
+.terms dd.val { font-weight: 600; }
 
-/* 단계 사다리 */
+/* 단계 사다리: 지금 단계까지 채우고 이름은 지금 단계만 진하게 */
 .ladder { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; }
-.ladder i { height: 6px; border-radius: 2px; background: var(--track); }
+.ladder i { height: 5px; border-radius: 2px; background: var(--track); }
 .ladder i.on { background: var(--sc); }
-.ladder-l { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; font-size: 11px; color: var(--muted); margin-top: -6px; }
-.ladder-l span { text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.ladder-l span.cur { color: var(--sc); font-weight: 600; }
-.note { margin: 0; font-size: 13.5px; color: var(--ink); }
-.prev { margin: 0; font-size: 12.5px; color: var(--muted); }
-.prev::before { content: "이전 흐름 "; font-weight: 600; }
-.links { list-style: none; margin: 0; padding: 10px 0 0; border-top: 1px dashed var(--line); display: grid; gap: 4px; font-size: 13px; }
+.ladder-l { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; font-size: 11px; color: var(--muted); margin-top: -7px; }
+.ladder-l span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: .7; }
+.ladder-l span.cur { color: var(--sc); font-weight: 700; opacity: 1; }
+.deal.dropped .ladder i.on { background: var(--track); }
+.note { margin: 0; font-size: 14px; }
+.prev { margin: 0; font-size: 12.5px; color: var(--muted); padding-left: 10px; border-left: 2px solid var(--track); }
+.links { list-style: none; margin: 0; padding: 9px 0 0; border-top: 1px solid var(--line); display: grid; gap: 3px; font-size: 13px; }
 .links li { min-width: 0; }
 .links a { text-decoration: none; display: flex; gap: 8px; min-width: 0; overflow: hidden; }
 .links a:hover .t { text-decoration: underline; }
 .links .s { flex: none; color: var(--muted); font-size: 12px; min-width: 5.5em; }
 .links .t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@keyframes flash { from { box-shadow: 0 0 0 3px color-mix(in srgb, var(--sc) 55%, transparent); } to { box-shadow: 0 0 0 3px transparent; } }
+@media (prefers-reduced-motion: no-preference) { .deal.flash { animation: flash 1.4s ease-out; } }
+@media (prefers-reduced-motion: reduce) { .deal.flash { outline: 2px solid var(--sc); } }
 
 /* 제외 */
-details.skip { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+details.skip { border-top: 1px solid var(--line); padding: 14px 0 0; }
 details.skip summary { cursor: pointer; font-weight: 600; }
 details.skip p { color: var(--muted); font-size: 13px; margin: 8px 0; }
 .skiplist { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); font-size: 13px; }
@@ -142,17 +175,16 @@ details.skip p { color: var(--muted); font-size: 13px; margin: 8px 0; }
 .skiplist li > span:last-child { color: var(--muted); text-align: right; }
 .skiplist .nm { display: grid; gap: 2px; min-width: 0; }
 .skiplinks { display: flex; flex-wrap: wrap; gap: 0 10px; font-size: 12px; }
-.skiplinks a { color: var(--accent); text-decoration: none; white-space: nowrap; }
+.skiplinks a { color: var(--s4); text-decoration: none; white-space: nowrap; }
 .skiplinks a:hover { text-decoration: underline; }
 .empty { color: var(--muted); padding: 24px 0; }
-footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 14px; }
-@media (prefers-reduced-motion: no-preference) { .deal { transition: border-color .15s; } .deal:hover { border-color: var(--muted); } }
+footer { color: var(--muted); font-size: 12px; }
 </style>
 
 <div class="wrap">
   <header class="mast">
     <div>
-      <div class="brand">딜레이더<span>M&amp;A DAILY</span></div>
+      <div class="brand"><svg viewBox="0 0 18 18" aria-hidden="true"><rect x="1" y="11" width="3" height="5" rx="1" fill="var(--s1)"/><rect x="5" y="9" width="3" height="7" rx="1" fill="var(--s2)"/><rect x="9" y="6" width="3" height="10" rx="1" fill="var(--s3)"/><rect x="13" y="2" width="3" height="14" rx="1" fill="var(--s5)"/></svg>딜레이더</div>
       <h1 id="h">—</h1>
     </div>
     <nav class="calbox" id="calbox" aria-label="날짜 선택 달력">
@@ -165,13 +197,12 @@ footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line)
   </header>
 
   <p class="summary" id="summary"></p>
-  <div class="tally" id="tally"></div>
+
+  <section class="board" id="board" aria-label="단계별 딜 지도"></section>
 
   <div class="filters">
-    <div class="seg" role="group" aria-label="지역">
-      <button data-r="전체" aria-pressed="true">전체</button><button data-r="국내" aria-pressed="false">국내</button><button data-r="해외" aria-pressed="false">해외</button>
-    </div>
-    <div class="seg" role="group" aria-label="딜 단계" id="stageSeg"></div>
+    <div class="seg" role="group" aria-label="지역" id="regSeg"></div>
+    <span class="fnote" id="fnote"></span>
   </div>
 
   <main id="feed"></main>
@@ -188,6 +219,7 @@ const GROUPS = [
   { key: "g3", name: "입찰·협상", short: "입찰", stages: ["prelim", "binding", "pref"] },
   { key: "g4", name: "계약·승인", short: "계약", stages: ["signed", "approval"] },
   { key: "g5", name: "인수 완료", short: "완료", stages: ["closed"] }];
+const DROP = { key: "g0", name: "무산·철회", stages: ["dropped"] };
 const GROUP_OF = {};
 GROUPS.forEach((g, i) => g.stages.forEach(s => GROUP_OF[s] = i));
 const STAGE_LABEL = { explore: "매물·매각 검토", adviser: "주관사 선정", marketing: "티저·IM 배포", prelim: "예비입찰", short: "숏리스트·실사",
@@ -201,7 +233,10 @@ try { const s = JSON.parse(localStorage.getItem("dealradar:f2") || "{}"); if (s.
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const label = d => { const t = new Date(d + "T00:00:00"); return `${t.getMonth() + 1}월 ${t.getDate()}일 ${WD[t.getDay()]}요일`; };
+const dateOf = d => new Date(d + "T00:00:00");
+const colorOf = d => d.stage === "dropped" ? "var(--s0)" : (GROUP_OF[d.stage] ?? -1) >= 0 ? `var(--s${GROUP_OF[d.stage] + 1})` : "var(--muted)";
+const groupKey = d => d.stage === "dropped" ? DROP.key : GROUPS[GROUP_OF[d.stage]]?.key;
+const save = () => { try { localStorage.setItem("dealradar:f2", JSON.stringify({ r: state.r, s: state.s })); } catch (e) {} };
 
 function loadDay(day) {
   if (window.DAYS && window.DAYS[day]) return Promise.resolve(window.DAYS[day]);
@@ -214,45 +249,80 @@ function loadDay(day) {
 
 function card(d) {
   const gi = GROUP_OF[d.stage] ?? -1, g = GROUPS[gi];
-  const color = gi >= 0 ? `var(--s${gi + 1})` : "var(--muted)";
   const bars = GROUPS.map((_, i) => `<i class="${i <= gi ? "on" : ""}"></i>`).join("");
   const marks = GROUPS.map((x, i) => `<span${i === gi ? ' class="cur"' : ""}>${x.short}</span>`).join("");
   const rows = [["대상", d.target], ["매도", d.seller], ["인수", d.buyer], ["금액", d.value]]
     .filter(r => r[1]).map(([k, v]) => `<dt>${k}</dt><dd${k === "금액" ? ' class="val"' : ""}>${esc(v)}</dd>`).join("");
   const links = d.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener"><span class="s">${esc(l.source)}</span><span class="t">${esc(l.title)}</span></a></li>`).join("");
-  return `<article class="deal" style="--sc:${color}">
-    <div class="top"><span class="pill">${STAGE_LABEL[d.stage]}</span><span class="sector">${esc(d.sector)}</span><span class="kind">${KIND_TEXT[d.kind] || ""}</span></div>
+  return `<article class="deal${d.stage === "dropped" ? " dropped" : ""}" id="${esc(d._id)}" style="--sc:${colorOf(d)}">
+    <div class="top"><span class="stg">${STAGE_LABEL[d.stage] || ""}</span><span class="sector">${esc(d.sector)}</span>${KIND_TEXT[d.kind] ? `<span class="kind${d.kind === "신규" ? " new" : ""}">${KIND_TEXT[d.kind]}</span>` : ""}</div>
     <h3>${esc(d.title)}</h3>
-    <div class="ladder" aria-label="딜 단계: ${g ? g.name : "무산"}">${bars}</div>
-    <div class="ladder-l" aria-hidden="true">${marks}</div>
+    ${d.stage === "dropped" ? "" : `<div class="ladder" role="img" aria-label="딜 단계: ${g ? g.name : ""}">${bars}</div>
+    <div class="ladder-l" aria-hidden="true">${marks}</div>`}
     <dl class="terms">${rows}</dl>
     ${d.note ? `<p class="note">${esc(d.note)}</p>` : ""}
-    ${d.prev ? `<p class="prev">${esc(d.prev)}</p>` : ""}
+    ${d.prev ? `<p class="prev">이전 흐름: ${esc(d.prev)}</p>` : ""}
     <ul class="links">${links}</ul>
   </article>`;
 }
 
+// 딜 지도: 지역 필터는 따르고, 단계 필터는 보드 자체가 고르는 곳이라 모든 칸을 보여줘요.
+function renderBoard(data) {
+  const deals = data.deals.filter(d => state.r === "전체" || d.region === state.r);
+  const cols = GROUPS.map((g, i) => ({ ...g, color: `var(--s${i + 1})` }));
+  if (data.deals.some(d => d.stage === "dropped")) cols.push({ ...DROP, color: "var(--s0)" });
+  const html = cols.map(c => {
+    const list = deals.filter(d => c.stages.includes(d.stage));
+    const cls = ["col", list.length ? "" : "zero", state.s === c.key ? "on" : state.s !== "전체" ? "off" : ""].filter(Boolean).join(" ");
+    const chips = list.map(d => `<button class="chip" data-go="${esc(d._id)}" title="${esc(d.title)}">${state.r === "전체" ? `<span class="rg">${d.region}</span>` : ""}${esc(d.key || d.title)}</button>`).join("")
+      || '<span class="none">없음</span>';
+    return `<div class="${cls}" style="--sc:${c.color}">
+      <button class="col-h" data-s="${c.key}" aria-pressed="${state.s === c.key}"${list.length ? "" : " disabled"}><span class="nm">${c.name}<b>${list.length}</b></span><span class="bar"></span></button>
+      <div class="chips">${chips}</div></div>`;
+  }).join("");
+  const sk = (data.skipped || []).length;
+  $("board").innerHTML = `<div class="board-cols" style="--n:${cols.length}">${html}</div>
+    <div class="board-foot"><span>단계 이름을 누르면 그 단계 딜만, 딜 이름을 누르면 해당 카드로 이동해요.</span>${sk ? `<button data-skip>후속 기사라 뺀 딜 ${sk}건</button>` : ""}</div>`;
+  $("board").querySelectorAll(".col-h").forEach(b => b.onclick = () => { state.s = state.s === b.dataset.s ? "전체" : b.dataset.s; save(); render(); });
+  $("board").querySelectorAll("[data-go]").forEach(b => b.onclick = () => {
+    if (state.s !== "전체") { state.s = "전체"; save(); render(); }
+    const el = document.getElementById(b.dataset.go); if (!el) return;
+    el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+  });
+  const sb = $("board").querySelector("[data-skip]");
+  if (sb) sb.onclick = () => { $("skip").open = true; $("skip").scrollIntoView({ behavior: "smooth" }); };
+}
+
 async function render() {
   renderCal();
-  document.querySelectorAll("[data-r]").forEach(b => b.setAttribute("aria-pressed", b.dataset.r === state.r));
-  document.querySelectorAll("[data-s]").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === state.s));
   if (!state.day) { $("feed").innerHTML = '<p class="empty">아직 모은 날짜가 없어요. 매일 아침 전날 기사가 여기에 쌓여요.</p>'; return; }
 
   const data = await loadDay(state.day);
-  $("h").textContent = label(state.day) + " 딜";
+  data.deals.forEach((d, i) => d._id = `deal-${i}`);
+  const t = dateOf(state.day);
+  $("h").innerHTML = `${t.getMonth() + 1}월 ${t.getDate()}일 ${WD[t.getDay()]}요일<small>이날 보도된 M&amp;A 신규·진전 딜 ${data.deals.length}건</small>`;
   $("summary").textContent = data.summary || "";
-  const n = i => data.deals.filter(d => GROUP_OF[d.stage] === i).length;
-  $("tally").innerHTML = GROUPS.map((g, i) => `<span><i class="dot" style="background:var(--s${i + 1})"></i>${g.name} <b>${n(i)}</b></span>`).join("")
-    + `<span>· 후속 기사라 제외 <b>${(data.skipped || []).length}</b></span>`;
 
-  const inStage = d => state.s === "전체" || GROUPS.find(g => g.key === state.s)?.stages.includes(d.stage);
-  const shown = data.deals.filter(d => (state.r === "전체" || d.region === state.r) && inStage(d));
+  // 고른 단계가 이날 없으면 전체로 돌려요
+  if (state.s !== "전체" && !data.deals.some(d => groupKey(d) === state.s)) state.s = "전체";
+  renderBoard(data);
+
+  const cnt = r => data.deals.filter(d => r === "전체" || d.region === r).length;
+  $("regSeg").innerHTML = ["전체", "국내", "해외"].map(r => `<button data-r="${r}" aria-pressed="${state.r === r}">${r}<small>${cnt(r)}</small></button>`).join("");
+  $("regSeg").querySelectorAll("[data-r]").forEach(b => b.onclick = () => { state.r = b.dataset.r; save(); render(); });
+  const sel = [...GROUPS, DROP].find(g => g.key === state.s);
+  $("fnote").innerHTML = sel ? `${sel.name} 단계만 보는 중 · <button id="clearS">모든 단계 보기</button>` : "";
+  if (sel) $("clearS").onclick = () => { state.s = "전체"; save(); render(); };
+
+  const shown = data.deals.filter(d => (state.r === "전체" || d.region === state.r) && (state.s === "전체" || groupKey(d) === state.s));
+  const order = d => d.stage === "dropped" ? 9 : (GROUP_OF[d.stage] ?? 8);
   $("feed").innerHTML = ["국내", "해외"].map(r => {
-    const list = shown.filter(d => d.region === r).sort((a, b) => (GROUP_OF[a.stage] ?? 9) - (GROUP_OF[b.stage] ?? 9));
+    const list = shown.filter(d => d.region === r).sort((a, b) => order(b) - order(a));
     if (!list.length) return "";
     return `<section class="region"><h2>${r}<small>${list.length}건</small></h2><div class="grid">${list.map(card).join("")}</div></section>`;
-  }).join("") || '<p class="empty">이 조건에 맞는 딜이 없어요.</p>';
-  $("feed").style.display = "grid"; $("feed").style.gap = "28px";
+  }).join("") || '<p class="empty">이 조건에 맞는 딜이 없어요. 위에서 지역이나 단계를 바꿔 보세요.</p>';
+  $("feed").style.display = "grid"; $("feed").style.gap = "30px";
 
   const sk = data.skipped || [];
   $("skip").hidden = !sk.length;
@@ -291,13 +361,6 @@ function renderCal() {
 }
 $("calPrev").onclick = () => { calYM = calYM[1] === 0 ? [calYM[0] - 1, 11] : [calYM[0], calYM[1] - 1]; renderCal(); };
 $("calNext").onclick = () => { calYM = calYM[1] === 11 ? [calYM[0] + 1, 0] : [calYM[0], calYM[1] + 1]; renderCal(); };
-$("stageSeg").innerHTML = `<button data-s="전체" aria-pressed="true">전체</button>`
-  + GROUPS.map(g => `<button data-s="${g.key}" aria-pressed="false">${g.name}</button>`).join("");
-document.querySelectorAll("[data-r],[data-s]").forEach(b => b.onclick = () => {
-  if (b.dataset.r) state.r = b.dataset.r; else state.s = b.dataset.s;
-  try { localStorage.setItem("dealradar:f2", JSON.stringify({ r: state.r, s: state.s })); } catch (e) {}
-  render();
-});
 render();
 </script>
 
